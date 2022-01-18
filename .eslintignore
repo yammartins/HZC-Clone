@@ -1,0 +1,5 @@
+dist
+*.html
+*.config.js
+.eslintrc.js
+node_modules
