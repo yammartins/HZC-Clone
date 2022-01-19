@@ -10,9 +10,9 @@ import { ReactComponent as IconShoppingCart } from '~/assets/icons/shopping-cart
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   icon?: 'plus' | 'house' | 'play' | 'cloud' | 'cart';
-  size: 'hg' | 'hg-icon' | 'md' | 'md-icon',
+  size: 'hg' | 'md',
   loading?: boolean;
-  appearance: 'solid' | 'outline',
+  appearance?: 'solid' | 'outline',
   label?: string;
   full?: boolean;
   disabled?: boolean;
@@ -37,9 +37,8 @@ const Button: React.FC<ButtonProps> = ({
     className,
     `is-${size}`,
     full && 'w-full',
-    `ìs-${appearance}`,
+    `is-${appearance}`,
     disabled && 'is-disabled',
-    icon && 'is-icon',
     loading && 'is-loading',
   );
 

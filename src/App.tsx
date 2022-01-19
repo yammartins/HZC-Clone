@@ -1,7 +1,8 @@
 import '~/styles/main.scss';
+import Menu from '~/layouts/Menu';
 
 const App: React.FC = () => (
-  <h1>App.</h1>
+  <Menu />
 );
 
 export default App;

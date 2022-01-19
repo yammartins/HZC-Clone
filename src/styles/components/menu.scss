@@ -1,0 +1,32 @@
+@layer components {
+  .aside {
+    @apply flex flex-col bg-bl w-[12.75rem] gap-[2.125rem] h-screen;
+
+    &-logo {
+      @apply mx-auto mt-6;
+
+      img {
+        @apply w-[7.375rem] h-[7.375rem] text-wt;
+      }
+    }
+
+    &-menu {
+
+      &-icons {
+        @apply items-center py-4 pl-6 text-grey relative flex cursor-pointer;
+
+        a {
+          @apply flex font-sans font-normal text-normal gap-4;
+        }  
+        
+        &:hover {
+          @apply transition-colors duration-300 text-wt;
+         
+          &::before {
+            @apply content-[''] transition-all duration-300 h-full w-2 bg-wt absolute left-0; 
+          }
+        }   
+      }
+    }
+  }
+}

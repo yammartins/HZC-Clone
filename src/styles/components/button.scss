@@ -1,0 +1,41 @@
+@layer components {
+  .button {
+    @apply flex rounded-lg gap-2 font-sans; 
+
+    svg {
+      @apply w-6 h-6; 
+    }
+
+    &.is-hg {
+      @apply px-4 py-4;
+    }
+
+    &.is-md {
+      @apply px-2 py-2;
+    }
+
+    &.is-solid {
+      @apply bg-blma text-wt;
+
+      &:hover {
+        @apply transition-colors duration-300 ease-in-out bg-blho;
+      }
+
+      &:focus {
+        @apply transition-colors duration-300 ease-in-out bg-blpr;
+      }
+    }
+
+    &.is-outline {
+      @apply bg-n20 text-blma;
+
+      &:hover {
+        @apply transition-colors duration-300 ease-in-out text-blho;
+      }
+
+      &:focus {
+        @apply transition-colors duration-300 ease-in-out text-blpr;
+      }
+    }
+  }
+}

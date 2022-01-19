@@ -1,7 +1,8 @@
 module.exports = {
   content: [
     './src/*.tsx',
-    './src/**/**/*.tsx',
+    './src/components/**/*.tsx',
+    './src/layouts/**/*.tsx',
     './src/styles/*.scss',
     './src/styles/**/*.scss',
   ],
@@ -10,7 +11,7 @@ module.exports = {
       bl: '#15191C',
       n90: '#1D232A',
       n80: '#2C343A',
-      gr: '#95999C',
+      grey: '#95999C',
       n20: '#D4D4D4',
       n10: '#E7E7E7',
       sewit: '#F3F3F3',
@@ -32,7 +33,8 @@ module.exports = {
       leg: ['14px', '24px'],
       normal: ['16px', '24px'],
       sm: ['12px', '16px'],
-      smbut: ['14px', '16px']
+      smbut: ['14px', '16px'],
+      menu: ['16px', '32px']
     }
   }
 };
