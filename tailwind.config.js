@@ -29,7 +29,7 @@ module.exports = {
       h2: ['32px', '48px'],
       h3: ['26px', '32px'],
       h4: ['18px', '24px'],
-      h5: ['14px', '24px'],
+      leg: ['14px', '24px'],
       normal: ['16px', '24px'],
       sm: ['12px', '16px'],
       smbut: ['14px', '16px']
