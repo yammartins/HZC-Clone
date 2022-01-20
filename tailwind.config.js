@@ -36,8 +36,5 @@ module.exports = {
       smbut: ['14px', '16px'],
       menu: ['16px', '32px']
     },
-    dropShadow: {
-      'hder': '(0px 4px 4px rgba(0, 0, 0, 0.16))'
-    }
   }
 };

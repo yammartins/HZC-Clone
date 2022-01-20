@@ -2,14 +2,15 @@ import Menu from '~/layouts/Menu';
 import SectionName from '~/layouts/SectionName';
 
 const Homepage: React.FC = () => (
-  <>
-    <aside>
-      <Menu />
-    </aside>
-    <header>
+  <div className="flex w-full">
+    <Menu />
+    <main className="flex flex-col w-full">
       <SectionName />
-    </header>
-  </>
+      <div className="content">
+        ..
+      </div>
+    </main>
+  </div>
 );
 
 export default Homepage;

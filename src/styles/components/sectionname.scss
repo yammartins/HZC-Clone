@@ -1,6 +1,6 @@
 @layer components {
   .section-channel {
-    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-hder items-center w-[calc(100vh-12.75rem)];
+    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-lg items-center w-full z-[2];
     
     .profile {
       @apply flex; 
@@ -16,16 +16,15 @@
       }
 
       .divider {
-        @apply h-full w-[1px] bg-grey mx-8; 
+        @apply h-8 w-[1px] bg-grey mx-8; 
       }
 
       .notification {
         @apply flex relative;
 
         &::before {
-          @apply content-[''] w-2 h-2 rounded-full flex-shrink bg-gr right-0 top-3; 
+          @apply content-[''] w-2 h-2 absolute rounded-full flex-shrink bg-gr left-[1.1rem] top-4; 
         }
-
       }
     }
   }

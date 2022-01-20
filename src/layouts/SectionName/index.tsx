@@ -1,10 +1,12 @@
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
 import { ReactComponent as NotificationIcon } from '../../assets/icons/notifications.svg';
-import Picture from '../../assets/zaap.jpeg';
+import Picture from '../../assets/profile.jpeg';
 
 const SectionName: React.FC = () => (
-  <div className="section-channel">
-    <h2 className="font-bold font-sans text-h3 text-wt">Início</h2>
+  <header className="section-channel">
+    <div className="channel-text">
+      <h2 className="font-bold font-sans text-h3 text-wt mr-auto">Início</h2>
+    </div>
     <div className="profile">
       <div className="profile-data">
         <div className="picture">
@@ -20,7 +22,7 @@ const SectionName: React.FC = () => (
         <NotificationIcon />
       </div>
     </div>
-  </div>
+  </header>
 );
 
 export default SectionName;

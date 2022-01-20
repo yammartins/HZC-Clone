@@ -1,6 +1,6 @@
 @layer components {
   .aside {
-    @apply flex flex-col bg-bl w-[12.75rem] gap-[2.125rem] h-screen;
+    @apply flex flex-col bg-bl max-w-[12.75rem] gap-[2.125rem] h-screen;
 
     &-logo {
       @apply mx-auto mt-6;
@@ -11,7 +11,8 @@
     }
 
     &-menu {
-
+    @apply pr-[2.8rem];
+    
       &-icons {
         @apply items-center py-4 pl-6 text-grey relative flex cursor-pointer;
 

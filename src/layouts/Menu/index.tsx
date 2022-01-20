@@ -7,7 +7,7 @@ import { ReactComponent as IconImage } from '../../assets/icons/wallpaper.svg';
 import Logo from '../../assets/logo.svg';
 
 const Menu: React.FC = () => (
-  <div className="aside">
+  <aside className="aside">
     <div className="aside-logo">
       <img src={Logo} alt="" />
     </div>
@@ -55,7 +55,7 @@ const Menu: React.FC = () => (
       </div>
 
     </div>
-  </div>
+  </aside>
 );
 
 export default Menu;
