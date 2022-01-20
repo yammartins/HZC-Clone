@@ -1,6 +1,6 @@
 @layer components {
   .videos {
-    @apply gap-6 flex flex-col ;
+    @apply gap-6 flex flex-col;
 
     .wraper-featured {
       @apply gap-8 flex relative;
@@ -13,7 +13,7 @@
         }
         
         .footer {
-          @apply flex p-4 justify-between items-center rounded-b-2xl bg-n80  drop-shadow-2xl;
+          @apply flex p-4 justify-between items-center rounded-b-2xl bg-n80;
 
           .description {
             @apply grid gap-2 text-wt;
@@ -35,7 +35,50 @@
       }
 
       .most-recent {
-        @apply rounded-2xl bg-n80 drop-shadow-2xl p-4 gap-4; 
+        @apply rounded-2xl bg-n80 p-4 gap-4 flex flex-col; 
+
+        &-list {
+          @apply grid gap-4;
+
+          .wraper {
+            @apply flex gap-4 relative;
+
+            .video-data {
+              
+              .title {
+                @apply text-leg font-bold text-wt max-w-[15rem];
+              }
+
+              .author {
+                @apply text-leg font-normal text-grey;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .most-seen {
+      @apply gap-8 flex;
+
+      .box {
+        @apply flex flex-col;
+
+        &-banner {
+          @apply rounded-t-2xl;
+        }
+
+        &-description {
+          @apply flex flex-col bg-n80 p-4 relative gap-2 rounded-b-2xl;
+
+          .author {
+            @apply flex items-center;
+
+            &-profile {
+              @apply absolute -top-8 right-4;
+            }
+          }
+        }
       }
     }
   }
