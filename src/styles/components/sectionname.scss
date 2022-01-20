@@ -7,12 +7,6 @@
 
       &-data {
         @apply gap-2 items-center flex;
-
-        .picture {
-          img {
-            @apply w-8 h-8 rounded-full flex-shrink;
-           }
-        }
       }
 
       .divider {

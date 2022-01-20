@@ -1,0 +1,42 @@
+@layer components {
+  .videos {
+    @apply gap-6 flex flex-col ;
+
+    .wraper-featured {
+      @apply gap-8 flex relative;
+
+      .featured-video {
+        @apply flex flex-col;
+
+        .banner {
+          @apply rounded-t-2xl;
+        }
+        
+        .footer {
+          @apply flex p-4 justify-between items-center rounded-b-2xl bg-n80  drop-shadow-2xl;
+
+          .description {
+            @apply grid gap-2 text-wt;
+
+            .about-and-info {
+              @apply flex flex-col gap-2;
+
+              .author-name {
+                @apply gap-2 flex items-center;
+                
+              }
+
+              .data {
+                @apply flex gap-6 items-center text-leg text-grey font-sans font-normal;
+              }
+            }
+          }
+        }
+      }
+
+      .most-recent {
+        @apply rounded-2xl bg-n80 drop-shadow-2xl p-4 gap-4; 
+      }
+    }
+  }
+}
