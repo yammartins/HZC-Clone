@@ -1,5 +1,32 @@
 @layer components {
-  .profile {
-    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-hder;  
+  .section-channel {
+    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-hder items-center w-[calc(100vh-12.75rem)];
+    
+    .profile {
+      @apply flex; 
+
+      &-data {
+        @apply gap-2 items-center flex;
+
+        .picture {
+          img {
+            @apply w-8 h-8 rounded-full flex-shrink;
+           }
+        }
+      }
+
+      .divider {
+        @apply h-full w-[1px] bg-grey mx-8; 
+      }
+
+      .notification {
+        @apply flex relative;
+
+        &::before {
+          @apply content-[''] w-2 h-2 rounded-full flex-shrink bg-gr right-0 top-3; 
+        }
+
+      }
+    }
   }
 }

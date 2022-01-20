@@ -1,8 +1,8 @@
 import '~/styles/main.scss';
-import Menu from '~/layouts/Menu';
+import Homepage from './pages/Homepage';
 
 const App: React.FC = () => (
-  <Menu />
+  <Homepage />
 );
 
 export default App;
