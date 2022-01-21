@@ -8,8 +8,8 @@ const MiniCards: React.FC<MiniCardsHandles> = ({
 
 }) => (
   <div key={id} className="wraper">
-    <div className="video-image pt-1">
-      <img src={image} alt="imagem do vídeo" />
+    <div className="w-8 h-8 pt-1">
+      <img src={image} alt="imagem do vídeo" className="h-auto w-full rounded-[0.25rem]" />
     </div>
     <div className="video-data">
       <h3 className="title">

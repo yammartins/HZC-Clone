@@ -10,6 +10,7 @@ import Video3 from '../../assets/album-3.png';
 import Video4 from '../../assets/album-4.png';
 import COF from '../../assets/banner.jpg';
 import Cruyff from '../../assets/cruyff.jpeg';
+import Farney from '../../assets/farney.jpeg';
 import Header1 from '../../assets/mainheader-1.svg';
 import Olavo from '../../assets/olavo.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
@@ -40,7 +41,7 @@ const Homepage: React.FC = () => (
                 <MiniCards id={1} image={Right1} author="Júlia Fonseca" title="HZC - Love machine" />
                 <MiniCards id={2} image={Right2} author="Júlia Fonseca" title="HZC - Vol.3" />
                 <MiniCards id={3} image={Right3} author="O Rappa" title="HZC - Pescaria na Urca" />
-                <MiniCards id={4} image={Right4} author="Dick Farney" title="Meus momentos" />
+                <MiniCards id={4} image={Farney} author="Dick Farney" title="Meus momentos" />
                 <MiniCards id={5} image={Right5} author="Yamandu Costa" title="Histórias do violão" />
               </div>
 
