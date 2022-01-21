@@ -13,7 +13,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
   duration,
   way,
 }) => (
-  <div className="featured-video">
+  <div className="featured">
     <div key={id} className="banner h-full">
       <img src={image} alt="imagem do vídeo" className="h-full" />
     </div>

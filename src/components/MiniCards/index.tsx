@@ -11,7 +11,7 @@ const MiniCards: React.FC<MiniCardsHandles> = ({
     <div className="w-8 h-8 pt-1">
       <img src={image} alt="imagem do vídeo" className="h-auto w-full rounded-[0.25rem]" />
     </div>
-    <div className="video-data">
+    <div className="data">
       <h3 className="title">
         {title}
       </h3>

@@ -11,6 +11,11 @@ import Video4 from '../../assets/album-4.png';
 import COF from '../../assets/banner.jpg';
 import Cruyff from '../../assets/cruyff.jpeg';
 import Farney from '../../assets/farney.jpeg';
+import Left17 from '../../assets/left-1-7.png';
+import Left2 from '../../assets/left-2.png';
+import Left36 from '../../assets/left-3-6.png';
+import Left4 from '../../assets/left-4.png';
+import Left5 from '../../assets/left-5.png';
 import Header1 from '../../assets/mainheader-1.svg';
 import Olavo from '../../assets/olavo.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
@@ -28,7 +33,7 @@ const Homepage: React.FC = () => (
       <SectionName />
       <div className="content">
         <div className="videos">
-          <div className="wraper-featured">
+          <div className="wrapper-featured">
             <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" />
             <div className="most-recent">
               <div className="flex gap-2">
@@ -55,6 +60,31 @@ const Homepage: React.FC = () => (
             <Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} />
             <Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} />
             <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} />
+          </div>
+        </div>
+        <h2 className="font-bold text-h3 text-wt">
+          Artes
+        </h2>
+        <div className="arts">
+          <div className="wrapper-featured">
+            <div className="most-recent">
+              <div className="flex gap-2">
+                <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
+                <a href="#morevideos" className="font-sans text-leg text-blma">
+                  Ver todos
+                </a>
+              </div>
+              <div className="most-recent-list">
+                <MiniCards id={1} image={Left17} title="Sem título 01" author="Antonio Tebyriçá" />
+                <MiniCards id={2} image={Left2} title="Sem título 02" author="Antonio Tebyriçá" />
+                <MiniCards id={3} image={Left36} title="Segurança" author="Raphael Gibson" />
+                <MiniCards id={4} image={Left4} title="Malunguisse" author="Carolina Cannavarro" />
+                <MiniCards id={5} image={Left5} title="Coroa da converse" author="Nikolas de Murtas" />
+                <MiniCards id={6} image={Left36} title="Segurança" author="Raphael Gibson" />
+                <MiniCards id={7} image={Left17} title="Sem título 03" author="Antonio Tebyriçá" />
+              </div>
+            </div>
+            <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" />
           </div>
         </div>
       </div>
