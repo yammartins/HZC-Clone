@@ -1,8 +1,8 @@
-export type CardsHandles = {
+export interface CardsHandles {
   id: number;
   image: string;
   author: string;
   name: string;
   title: string;
-  views: number;
-};
+  duration: number | string;
+}
