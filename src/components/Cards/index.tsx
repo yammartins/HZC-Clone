@@ -26,6 +26,8 @@ const Cards: React.FC<CardsHandles> = ({
       <span className="flex items-center gap-2 text-grey font-sans font-normal text-leg mt-6">
         <TimeIcon />
         {duration}
+        {' '}
+        minutos
       </span>
     </div>
   </div>
