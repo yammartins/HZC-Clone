@@ -62,11 +62,7 @@
       @apply gap-8 flex;
 
       .box {
-        @apply flex flex-col;
-
-        &-banner {
-          @apply rounded-t-2xl;
-        }
+        @apply flex flex-col max-w-[16rem] max-h-[19rem];
 
         &-description {
           @apply flex flex-col bg-n80 p-4 relative gap-2 rounded-b-2xl;
