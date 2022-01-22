@@ -1,3 +1,4 @@
+import { ReactComponent as DolarIcon } from '../../assets/icons/dolar.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/time.svg';
 import { ReactComponent as ViewsIcon } from '../../assets/icons/views.svg';
 import Button from '../Button';
@@ -12,14 +13,18 @@ const MainCards: React.FC<MainCardsHandles> = ({
   views,
   duration,
   way,
+  icon,
+  button,
+  type,
+  info,
 }) => (
-  <div className="featured">
-    <div key={id} className="banner h-full">
-      <img src={image} alt="imagem do vídeo" className="h-full" />
+  <div className={`featured-${type}`}>
+    <div key={id} className="h-[21rem] w-auto">
+      <img src={image} alt="imagem do vídeo" className="w-auto h-full" />
     </div>
     <div className="footer h-full">
       <div className="description">
-        <h3 className="font-sans font-bold text-h4">Vídeo em destaque</h3>
+        <h3 className="font-sans font-bold text-h4">{info}</h3>
 
         <h1 className="font-sans font-bold text-h3">{title}</h1>
 
@@ -33,7 +38,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
           <div className="data">
             <div className="published">
               <span className="flex items-center gap-2">
-                <TimeIcon />
+                {type === 'video' ? (<TimeIcon />) : (<DolarIcon />)}
                 {duration}
                 {' '}
                 minutos
@@ -53,7 +58,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
       </div>
       <div className="flex">
         <a href={way}>
-          <Button icon="play" label="Assistir agora" size="md" submit />
+          <Button icon={icon} label={button} size="md" submit />
         </a>
       </div>
     </div>

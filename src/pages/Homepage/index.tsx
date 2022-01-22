@@ -4,6 +4,7 @@ import MiniCards from '~/components/MiniCards';
 import Menu from '~/layouts/Menu';
 import SectionName from '~/layouts/SectionName';
 
+import Ademir from '../../assets/ademir.jpeg';
 import Video1 from '../../assets/album-1.png';
 import Video2 from '../../assets/album-2.png';
 import Video3 from '../../assets/album-3.png';
@@ -17,6 +18,7 @@ import Left36 from '../../assets/left-3-6.png';
 import Left4 from '../../assets/left-4.png';
 import Left5 from '../../assets/left-5.png';
 import Header1 from '../../assets/mainheader-1.svg';
+import Header2 from '../../assets/mainheader2.png';
 import Olavo from '../../assets/olavo.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
 import Right1 from '../../assets/right-1.png';
@@ -25,6 +27,7 @@ import Right3 from '../../assets/right-3.png';
 import Right4 from '../../assets/right-4.png';
 import Right5 from '../../assets/right-5.png';
 import Samurai from '../../assets/samurai.jpg';
+import SaoJanuario from '../../assets/saojanuario.jpeg';
 
 const Homepage: React.FC = () => (
   <div className="flex w-full">
@@ -34,7 +37,7 @@ const Homepage: React.FC = () => (
       <div className="content">
         <div className="videos">
           <div className="wrapper-featured">
-            <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" />
+            <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" icon="play" button="Assistir agora" type="video" info="Vídeo em destaque" />
             <div className="most-recent">
               <div className="flex gap-2">
                 <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
@@ -84,7 +87,7 @@ const Homepage: React.FC = () => (
                 <MiniCards id={7} image={Left17} title="Sem título 03" author="Antonio Tebyriçá" />
               </div>
             </div>
-            <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" />
+            <MainCards id={2} image={Header2} author={Diomedes} name="João ZMS" title="Only Zikas - Lagoa Dompa Club" views={33} duration={52} way="#play" icon="cart" button="Comprar agora" type="arts" info="Nova arte" />
           </div>
         </div>
       </div>

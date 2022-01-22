@@ -9,7 +9,7 @@ import { ReactComponent as IconPlus } from '~/assets/icons/plus.svg';
 import { ReactComponent as IconShoppingCart } from '~/assets/icons/shopping-cart.svg';
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  icon?: 'plus' | 'house' | 'play' | 'cloud' | 'cart';
+  icon?: 'plus' | 'house' | 'play' | 'cloud' | 'cart' | string;
   size: 'hg' | 'md',
   loading?: boolean;
   appearance?: 'solid' | 'outline',
