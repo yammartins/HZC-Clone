@@ -5,4 +5,6 @@ export interface CardsHandles {
   name: string;
   title: string;
   duration: number;
+  type: string;
+  price?: number | string;
 }

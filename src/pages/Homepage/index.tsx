@@ -8,10 +8,11 @@ import Ademir from '../../assets/ademir.jpeg';
 import Video1 from '../../assets/album-1.png';
 import Video2 from '../../assets/album-2.png';
 import Video3 from '../../assets/album-3.png';
-import Video4 from '../../assets/album-4.png';
 import COF from '../../assets/banner.jpg';
+import Carpeaux from '../../assets/carpeaux.jpeg';
 import Cruyff from '../../assets/cruyff.jpeg';
 import Farney from '../../assets/farney.jpeg';
+import Junger from '../../assets/junger.jpeg';
 import Left17 from '../../assets/left-1-7.png';
 import Left2 from '../../assets/left-2.png';
 import Left36 from '../../assets/left-3-6.png';
@@ -20,14 +21,15 @@ import Left5 from '../../assets/left-5.png';
 import Header1 from '../../assets/mainheader-1.svg';
 import Header2 from '../../assets/mainheader2.png';
 import Olavo from '../../assets/olavo.jpeg';
+import Professor from '../../assets/professor.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
 import Right1 from '../../assets/right-1.png';
 import Right2 from '../../assets/right-2.png';
 import Right3 from '../../assets/right-3.png';
-import Right4 from '../../assets/right-4.png';
 import Right5 from '../../assets/right-5.png';
 import Samurai from '../../assets/samurai.jpg';
 import SaoJanuario from '../../assets/saojanuario.jpeg';
+import Shirt2 from '../../assets/shirt-2.png';
 
 const Homepage: React.FC = () => (
   <div className="flex w-full">
@@ -52,17 +54,16 @@ const Homepage: React.FC = () => (
                 <MiniCards id={4} image={Farney} author="Dick Farney" title="Meus momentos" />
                 <MiniCards id={5} image={Right5} author="Yamandu Costa" title="Histórias do violão" />
               </div>
-
             </div>
           </div>
           <h2 className="font-bold text-h3 text-wt">
             Vídeos mais vistos
           </h2>
           <div className="most-seen">
-            <Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} />
-            <Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} />
-            <Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} />
-            <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} />
+            <Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" />
+            <Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" />
+            <Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" />
+            <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
           </div>
         </div>
         <h2 className="font-bold text-h3 text-wt">
@@ -87,7 +88,16 @@ const Homepage: React.FC = () => (
                 <MiniCards id={7} image={Left17} title="Sem título 03" author="Antonio Tebyriçá" />
               </div>
             </div>
-            <MainCards id={2} image={Header2} author={Diomedes} name="João ZMS" title="Only Zikas - Lagoa Dompa Club" views={33} duration={52} way="#play" icon="cart" button="Comprar agora" type="arts" info="Nova arte" />
+            <MainCards id={2} image={Header2} author={Diomedes} name="João ZMS" title="Only Zikas - Lagoa Dompa Club" views={33} duration={52} way="#play" icon="cart" button="Comprar agora" type="arts" info="Nova arte" price={33.33} />
+          </div>
+          <h2 className="font-bold text-h3 text-wt">
+            Camisas mais recentes
+          </h2>
+          <div className="most-seen">
+            <Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} />
+            <Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} />
+            <Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} />
+            <Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} />
           </div>
         </div>
       </div>

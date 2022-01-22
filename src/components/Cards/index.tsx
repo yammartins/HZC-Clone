@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ReactComponent as DolarIcon } from '../../assets/icons/dolar.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/time.svg';
 import { CardsHandles } from './types';
 
@@ -10,12 +11,14 @@ const Cards: React.FC<CardsHandles> = ({
   name,
   title,
   duration,
+  type,
+  price,
 }) => (
-  <div key={id} className="box">
+  <div key={id} className={`box-${type}`}>
     <div className="box-banner h-40">
-      <img src={image} alt="imagem do vídeo" className="rounded-t-2xl h-full" />
+      <img src={image} alt="imagem do vídeo" className="rounded-t-2xl h-full w-full" />
     </div>
-    <div className="box-description">
+    <div className={`box-${type}-description`}>
       <div className="author">
         <cite className="font-normal text-leg text-grey">{name}</cite>
         <div className="author-profile">
@@ -24,10 +27,8 @@ const Cards: React.FC<CardsHandles> = ({
       </div>
       <h2 className="text-h4 font-bold text-wt truncate hover:text-clip">{title}</h2>
       <span className="flex items-center gap-2 text-grey font-sans font-normal text-leg mt-6">
-        <TimeIcon />
-        {duration}
-        {' '}
-        minutos
+        {type === 'video' ? (<TimeIcon />) : (<DolarIcon />)}
+        {type === 'video' ? (`${duration} minutos`) : (`${price}`)}
       </span>
     </div>
   </div>

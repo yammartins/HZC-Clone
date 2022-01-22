@@ -11,4 +11,5 @@ export interface MainCardsHandles {
   duration: number;
   type: string;
   info: string;
+  price?: number | string;
 }

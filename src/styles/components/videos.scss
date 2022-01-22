@@ -61,7 +61,7 @@
     .most-seen {
       @apply gap-8 flex;
 
-      .box {
+      .box-video {
         @apply flex flex-col max-w-[16rem] max-h-[19rem];
 
         &-description {

@@ -17,6 +17,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
   button,
   type,
   info,
+  price,
 }) => (
   <div className={`featured-${type}`}>
     <div key={id} className="h-[21rem] w-auto">
@@ -39,9 +40,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
             <div className="published">
               <span className="flex items-center gap-2">
                 {type === 'video' ? (<TimeIcon />) : (<DolarIcon />)}
-                {duration}
-                {' '}
-                minutos
+                {type === 'video' ? (`${duration} minutos`) : (`${price}`)}
               </span>
             </div>
             <div className="views">
