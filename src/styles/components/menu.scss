@@ -1,9 +1,9 @@
 @layer components {
   .aside {
-    @apply flex flex-col bg-bl max-w-[12.75rem] gap-[2.125rem] h-screen;
+    @apply fixed z-10 bg-bl w-[12.75rem] gap-[2.125rem] h-screen;
 
     &-logo {
-      @apply mx-auto mt-6;
+      @apply relative px-[2.68rem] pt-[1.5rem] pb-[2.125rem];
 
       img {
         @apply w-[7.375rem] h-[7.375rem] text-wt;
@@ -11,7 +11,7 @@
     }
 
     &-menu {
-    @apply pr-[2.8rem];
+    @apply pr-[2.8rem] fixed;
     
       &-icons {
         @apply items-center py-4 pl-6 text-grey relative flex cursor-pointer;

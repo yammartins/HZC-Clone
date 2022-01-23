@@ -9,11 +9,11 @@
         @apply flex flex-col;
 
         .banner {
-          @apply rounded-t-2xl;
+          @apply rounded-t-2xl w-full;
         }
         
         .footer {
-          @apply flex p-4 justify-between items-center rounded-b-2xl bg-n80;
+          @apply flex p-4 justify-between items-center rounded-b-2xl bg-n80 w-full;
 
           .description {
             @apply grid gap-2 text-wt;
@@ -35,7 +35,7 @@
       }
 
       .most-recent {
-        @apply rounded-2xl bg-n80 p-4 gap-4 flex flex-col; 
+        @apply rounded-2xl bg-n80 p-4 gap-4 flex flex-col min-w-[16rem] min-h-[31rem]; 
 
         &-list {
           @apply grid gap-4;

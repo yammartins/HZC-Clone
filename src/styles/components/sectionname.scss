@@ -1,6 +1,6 @@
 @layer components {
   .section-channel {
-    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-lg items-center w-full z-[2];
+    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-lg items-center w-[calc(100%-204px)] ml-[12.75rem] fixed z-[2];
     
     .profile {
       @apply flex; 

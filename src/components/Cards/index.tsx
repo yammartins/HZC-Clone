@@ -15,7 +15,7 @@ const Cards: React.FC<CardsHandles> = ({
   price,
 }) => (
   <div key={id} className={`box-${type}`}>
-    <div className="box-banner h-40">
+    <div className="box-banner h-40 w-auto">
       <img src={image} alt="imagem do vídeo" className="rounded-t-2xl h-full w-full" />
     </div>
     <div className={`box-${type}-description`}>
