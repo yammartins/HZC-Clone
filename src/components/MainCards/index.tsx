@@ -21,7 +21,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
 }) => (
   <div className={`featured-${type}`}>
     <div key={id} className="h-[21rem] w-full">
-      <img src={image} alt="imagem do vídeo" className="w-auto h-full" />
+      <img src={image} alt="imagem do vídeo" className="w-full h-full rounded-t-2xl object-cover" />
     </div>
     <div className="footer">
       <div className="description">

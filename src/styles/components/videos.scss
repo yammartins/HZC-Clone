@@ -3,10 +3,10 @@
     @apply gap-6 flex flex-col;
 
     .wrapper-featured {
-      @apply gap-8 flex relative;
+      @apply gap-8 flex relative w-full;
 
       .featured-video {
-        @apply flex flex-col;
+        @apply flex flex-col w-full;
 
         .banner {
           @apply rounded-t-2xl w-full;
