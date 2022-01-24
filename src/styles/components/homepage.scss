@@ -1,6 +1,7 @@
 @layer components {
   .content {
-    @apply gap-6 flex flex-col w-[calc(100%-12.75rem)] mt-[6.875rem]  mb-20 pl-[14.375rem] relative z-[1];
+    @apply gap-6 flex flex-col w-[calc(100%-12.75rem)] mt-[6.875rem]  mb-20 pl-[9.5rem] relative z-[1]
+    mx-auto;
      
   }
 }

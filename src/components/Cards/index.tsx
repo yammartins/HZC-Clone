@@ -22,7 +22,7 @@ const Cards: React.FC<CardsHandles> = ({
       <div className="author">
         <cite className="font-normal text-leg text-grey">{name}</cite>
         <div className="author-profile">
-          <img src={author} alt="foto do autor" className="h-12 w-12 rounded-full flex-shrink" />
+          <img src={author} alt="foto do autor" className="h-12 w-12 rounded-full object-cover" />
         </div>
       </div>
       <h2 className="text-h4 font-bold text-wt truncate hover:text-clip">{title}</h2>

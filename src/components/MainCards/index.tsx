@@ -20,8 +20,8 @@ const MainCards: React.FC<MainCardsHandles> = ({
   price,
 }) => (
   <div className={`featured-${type}`}>
-    <div key={id} className="h-[21rem] w-full">
-      <img src={image} alt="imagem do vídeo" className="w-full h-full rounded-t-2xl object-cover" />
+    <div key={id} className={`featured-${type}-banner`}>
+      <img src={image} alt="imagem do vídeo" className="main-image" />
     </div>
     <div className="footer">
       <div className="description">
