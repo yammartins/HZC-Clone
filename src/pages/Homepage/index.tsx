@@ -1,3 +1,4 @@
+import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Cards from '~/components/Cards';
@@ -5,7 +6,6 @@ import MainCards from '~/components/MainCards';
 import MiniCards from '~/components/MiniCards';
 import Menu from '~/layouts/Menu';
 import SectionName from '~/layouts/SectionName';
-import 'swiper/css';
 
 import Ademir from '../../assets/ademir.jpeg';
 import Video1 from '../../assets/album-1.png';
@@ -62,20 +62,24 @@ const Homepage: React.FC = () => (
           <h2 className="font-bold text-h3 text-wt">
             Vídeos mais vistos
           </h2>
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-            <div className="most-seen">
+
+          <div className="most-seen">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={32}
+              slidesPerView={4}
+              pagination={{
+                clickable: true,
+              }}
+            >
               <SwiperSlide><Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" /></SwiperSlide>
               <SwiperSlide><Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" /></SwiperSlide>
               <SwiperSlide><Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" /></SwiperSlide>
               <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
-            </div>
-          </Swiper>
+              <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
+              <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
+            </Swiper>
+          </div>
         </div>
         <h2 className="font-bold text-h3 text-wt">
           Artes
@@ -105,6 +109,10 @@ const Homepage: React.FC = () => (
             Camisas mais recentes
           </h2>
           <div className="most-seen">
+            <Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} />
+            <Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} />
+            <Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} />
+            <Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} />
             <Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} />
             <Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} />
             <Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} />
