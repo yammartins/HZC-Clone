@@ -16,7 +16,7 @@
       &-icons {
         @apply items-center py-4 pl-6 text-grey relative flex cursor-pointer;
 
-        a {
+        .link {
           @apply flex font-sans font-normal text-normal gap-4;
         }  
         

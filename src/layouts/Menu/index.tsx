@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { ReactComponent as IconShirts } from '../../assets/icons/accessibility.svg';
 import { ReactComponent as IconHouse } from '../../assets/icons/house.svg';
 import { ReactComponent as IconPin } from '../../assets/icons/pin.svg';
@@ -13,44 +15,44 @@ const Menu: React.FC = () => (
     </div>
     <div className="aside-menu">
       <div className="aside-menu-icons">
-        <a href="#home">
+        <Link to="/" className="link">
           <IconHouse />
           Início
-        </a>
+        </Link>
       </div>
       <div className="aside-menu-icons">
-        <a href="#video">
+        <Link to="/" className="link">
           <IconVideo />
           Vídeos
-        </a>
+        </Link>
 
       </div>
       <div className="aside-menu-icons">
-        <a href="#trends">
+        <Link to="/picos" className="link">
           <IconPin />
           Picos
-        </a>
+        </Link>
 
       </div>
       <div className="aside-menu-icons">
-        <a href="#members">
+        <Link to="/" className="link">
           <IconUser />
           Integrantes
-        </a>
+        </Link>
 
       </div>
       <div className="aside-menu-icons">
-        <a href="#shirts">
+        <Link to="/" className="link">
           <IconShirts />
           Camisetas
-        </a>
+        </Link>
 
       </div>
       <div className="aside-menu-icons">
-        <a href="#pictures">
+        <Link to="/" className="link">
           <IconImage />
           Pinturas
-        </a>
+        </Link>
 
       </div>
 
