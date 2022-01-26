@@ -1,10 +1,11 @@
+import React from 'react';
+
+import Router from './routes';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import '~/styles/main.scss';
-import Homepage from './pages/Homepage';
 
-const App: React.FC = () => (
-  <Homepage />
-);
+const App: React.FC = () => <Router />;
 
 export default App;
