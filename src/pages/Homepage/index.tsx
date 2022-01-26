@@ -109,14 +109,23 @@ const Homepage: React.FC = () => (
             Camisas mais recentes
           </h2>
           <div className="most-seen">
-            <Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} />
-            <Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} />
-            <Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} />
-            <Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} />
-            <Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} />
-            <Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} />
-            <Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} />
-            <Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} />
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={32}
+              slidesPerView={4}
+              pagination={{
+                clickable: true,
+              }}
+            >
+              <SwiperSlide><Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} /></SwiperSlide>
+              <SwiperSlide><Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} /></SwiperSlide>
+              <SwiperSlide><Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} /></SwiperSlide>
+              <SwiperSlide><Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} /></SwiperSlide>
+              <SwiperSlide><Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} /></SwiperSlide>
+              <SwiperSlide><Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} /></SwiperSlide>
+              <SwiperSlide><Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} /></SwiperSlide>
+              <SwiperSlide><Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} /></SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>

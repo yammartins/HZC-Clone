@@ -67,8 +67,6 @@
     }
 
     .most-seen {
-      @apply gap-8 flex m-auto;
-
       .box-arts {
         @apply flex flex-col max-w-[16rem] max-h-[19rem];
 
