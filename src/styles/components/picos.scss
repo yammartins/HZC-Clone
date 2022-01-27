@@ -1,0 +1,39 @@
+@layer components {
+  .picos {
+    @apply flex flex-col w-full pl-[16.375rem] pt-28 pr-[3.625rem] pb-8 gap-6;
+
+    &-location {
+      @apply flex gap-8;
+
+      .map-of-points {
+        @apply w-full h-[30rem];
+
+        &-image {
+          @apply w-full h-full object-cover flex-shrink rounded-2xl;
+        }
+      }
+
+      .favorite {
+        @apply flex flex-col p-4 gap-4 rounded-2xl bg-n80 w-[16rem] h-[30rem];
+
+        .header {
+          @apply flex justify-between;
+        }
+        .wrapper {
+          @apply flex gap-4 relative flex-col;
+
+          .data {
+            
+            .title {
+              @apply text-leg font-bold text-wt max-w-[15rem];
+            }
+
+            .author {
+              @apply text-leg font-normal text-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}

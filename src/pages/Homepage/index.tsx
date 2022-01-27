@@ -46,7 +46,7 @@ const Homepage: React.FC = () => (
             <div className="most-recent">
               <div className="flex gap-2">
                 <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
-                <a href="#morevideos" className="font-sans text-leg text-blma">
+                <a href="#morevideos" className="font-sans text-smbut text-blma">
                   Ver todos
                 </a>
               </div>

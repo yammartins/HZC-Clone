@@ -20,19 +20,19 @@ import Schiller from '../../assets/schiller.jpg';
 const Picos: React.FC = () => (
   <div className="flex w-full">
     <Menu />
-    <main>
+    <main className="w-full h-full flex">
       <SectionName />
       <div className="picos">
-        <div className="picos-post">
-          <div className="location">
-            <img src={Location} alt="" />
+        <div className="picos-location">
+          <div className="map-of-points">
+            <img src={Location} alt="nossos pontos favoritos" className="map-of-points-image" />
           </div>
           <div className="favorite">
-            <div className="favorite-header">
-              <h2 className="">
+            <div className="header">
+              <h3 className="text-h4 font-bold font-sans text-wt">
                 Favoritos
-              </h2>
-              <a href="#more" className="">Ver todos</a>
+              </h3>
+              <a href="#more" className="text-smbut text-blma font-semibold">Ver todos</a>
             </div>
             <div className="wrapper">
               <MiniCards id={1} image={Right1} author="fulano" title="matador de argos" />
