@@ -45,51 +45,8 @@
   
         .most-recent {
           @apply rounded-2xl bg-n80 p-4 gap-4 flex flex-col min-w-[16rem] max-h-[31rem]; 
-  
-          &-list {
-            @apply grid gap-4 overflow-y-scroll max-h-[calc(100%-3rem)];
-  
-            .wraper {
-              @apply flex gap-4 relative;
-  
-              .data {
-                
-                .title {
-                  @apply text-leg font-bold text-wt max-w-[15rem];
-                }
-  
-                .author {
-                  @apply text-leg font-normal text-grey;
-                }
-              }
-            }
-  
-            &::-webkit-scrollbar {
-              @apply hidden;
-            }
-          }
         }
       }
-  
-      .most-seen {
-        .box-arts,
-        .box-video {
-          @apply flex flex-col max-w-[16rem] max-h-[19rem];
-  
-          &-description {
-            @apply flex flex-col bg-n80 p-4 relative gap-2 rounded-b-2xl;
-  
-            .author {
-              @apply flex items-center;
-  
-              &-profile {
-                @apply absolute -top-8 right-4;
-              }
-            }
-          }
-        }
-      }
-    }
-     
+    }     
   }
 }

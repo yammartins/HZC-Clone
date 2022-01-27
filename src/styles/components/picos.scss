@@ -14,24 +14,10 @@
       }
 
       .favorite {
-        @apply flex flex-col p-4 gap-4 rounded-2xl bg-n80 w-[16rem] h-[30rem];
+        @apply flex flex-col p-4 gap-4 rounded-2xl bg-n80 min-w-[16rem] h-[30rem];
 
         .header {
           @apply flex justify-between;
-        }
-        .wrapper {
-          @apply flex gap-4 relative flex-col;
-
-          .data {
-            
-            .title {
-              @apply text-leg font-bold text-wt max-w-[15rem];
-            }
-
-            .author {
-              @apply text-leg font-normal text-grey;
-            }
-          }
         }
       }
     }

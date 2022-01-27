@@ -1,0 +1,24 @@
+@layer components {
+  .most-recent-list {
+    @apply flex gap-4 relative flex-col overflow-y-scroll max-h-[calc(100%-3rem)];
+
+    .wraper {
+      @apply flex gap-4 relative;
+
+      .data {
+        
+        .title {
+          @apply text-leg font-bold text-wt max-w-[15rem];
+        }
+
+        .author {
+          @apply text-leg font-normal text-grey;
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+  }
+}

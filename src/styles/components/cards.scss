@@ -1,0 +1,23 @@
+@layer components {
+  .most-seen {
+    @apply flex;
+    
+    .box-arts,
+    .box-video,
+    .box-post {
+      @apply flex flex-col max-w-[16rem] max-h-[19rem];
+
+      &-description {
+        @apply flex flex-col bg-n80 p-4 relative gap-2 rounded-b-2xl;
+
+        .author {
+          @apply flex items-center;
+
+          &-profile {
+            @apply absolute -top-8 right-4;
+          }
+        }
+      }
+    }
+  }
+}
