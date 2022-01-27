@@ -4,7 +4,8 @@ export interface CardsHandles {
   author: string;
   name: string;
   title: string;
-  duration: number;
+  duration?: number;
+  view?: number
   type: string;
   price?: number | string;
 }

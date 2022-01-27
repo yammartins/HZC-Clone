@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ReactComponent as DolarIcon } from '../../assets/icons/dolar.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/time.svg';
+import { ReactComponent as ViewIcon } from '../../assets/icons/views.svg';
 import { CardsHandles } from './types';
 
 const Cards: React.FC<CardsHandles> = ({
@@ -13,6 +14,7 @@ const Cards: React.FC<CardsHandles> = ({
   duration,
   type,
   price,
+  view,
 }) => (
   <div key={id} className={`box-${type}`}>
     <div className="box-banner h-40 w-auto">
@@ -29,6 +31,8 @@ const Cards: React.FC<CardsHandles> = ({
       <span className="flex items-center gap-2 text-grey font-sans font-normal text-leg mt-6">
         {type === 'video' ? (<TimeIcon />) : (<DolarIcon />)}
         {type === 'video' ? (`${duration} minutos`) : (`${price}`)}
+        {type === 'post' && (<ViewIcon />)}
+        {type === 'post' && (`${view} visualizações`)}
       </span>
     </div>
   </div>

@@ -2,6 +2,95 @@
   .content {
     @apply gap-6 flex flex-col w-[calc(100%-12.75rem)] mt-[6.875rem]  mb-20 pl-[9.5rem] relative z-[1]
     mx-auto;
+
+    .arts,
+    .videos {
+      @apply gap-6 flex flex-col h-full;
+  
+      .wrapper-featured {
+        @apply gap-8 flex relative w-full;
+  
+        .featured-arts,
+        .featured-video {
+          @apply flex flex-col w-full h-full;
+  
+          &-banner {
+            @apply rounded-t-2xl w-full h-full;
+  
+            .main-image {
+              @apply w-full h-full rounded-t-2xl object-cover max-h-[21rem];
+            }
+          }
+          
+          .footer {
+            @apply flex p-4 justify-between items-center rounded-b-2xl bg-n80 w-full min-h-[10rem] h-full; 
+  
+            .description {
+              @apply grid gap-2 text-wt;
+  
+              .about-and-info {
+                @apply flex flex-col gap-2;
+  
+                .author-name {
+                  @apply gap-2 flex items-center;
+                  
+                }
+  
+                .data {
+                  @apply flex gap-6 items-center text-leg text-grey font-sans font-normal;
+                }
+              }
+            }
+          }
+        }
+  
+        .most-recent {
+          @apply rounded-2xl bg-n80 p-4 gap-4 flex flex-col min-w-[16rem] max-h-[31rem]; 
+  
+          &-list {
+            @apply grid gap-4 overflow-y-scroll max-h-[calc(100%-3rem)];
+  
+            .wraper {
+              @apply flex gap-4 relative;
+  
+              .data {
+                
+                .title {
+                  @apply text-leg font-bold text-wt max-w-[15rem];
+                }
+  
+                .author {
+                  @apply text-leg font-normal text-grey;
+                }
+              }
+            }
+  
+            &::-webkit-scrollbar {
+              @apply hidden;
+            }
+          }
+        }
+      }
+  
+      .most-seen {
+        .box-arts,
+        .box-video {
+          @apply flex flex-col max-w-[16rem] max-h-[19rem];
+  
+          &-description {
+            @apply flex flex-col bg-n80 p-4 relative gap-2 rounded-b-2xl;
+  
+            .author {
+              @apply flex items-center;
+  
+              &-profile {
+                @apply absolute -top-8 right-4;
+              }
+            }
+          }
+        }
+      }
+    }
      
   }
 }
