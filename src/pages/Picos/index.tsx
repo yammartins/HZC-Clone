@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Cards from '~/components/Cards';
 import MiniCards from '~/components/MiniCards';
 import Menu from '~/layouts/Menu';
@@ -46,7 +48,9 @@ const Picos: React.FC = () => (
         </div>
         <h2 className="text-h3 text-wt font-bold">Mais visitados</h2>
         <div className="most-seen gap-8">
-          <Cards id={1} image={Pico1} author={Samurai} name="Bruno Lopes" title="Gap do Itaú da Voluntários da Pátria" type="post" view={53} />
+          <Link to="/picos/article">
+            <Cards id={1} image={Pico1} author={Samurai} name="Bruno Lopes" title="Gap do Itaú da Voluntários da Pátria" type="post" view={53} />
+          </Link>
           <Cards id={2} image={Pico2} author={Schiller} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} />
           <Cards id={3} image={Pico3} author={Diomedes} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} />
           <Cards id={4} image={Pico4} author={Diomedes} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} />

@@ -27,7 +27,7 @@ const Cards: React.FC<CardsHandles> = ({
           <img src={author} alt="foto do autor" className="h-12 w-12 rounded-full object-cover" />
         </div>
       </div>
-      <h2 className="text-h4 font-bold text-wt truncate hover:text-clip">{title}</h2>
+      <h2 className="text-h4 font-bold text-wt w-[12.625rem]">{title}</h2>
       <span className="flex items-center gap-2 text-grey font-sans font-normal text-leg mt-6">
         {type === 'video' && (<TimeIcon />)}
         {type === 'video' && (`${duration} minutos`)}

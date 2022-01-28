@@ -13,6 +13,9 @@ const Router: React.FC = () => (
       <Route path="/" element={<Homepage />} />
 
       <Route path="/picos" element={<Picos />} />
+
+      <Route path="/picos/article" element={<Article />} />
+
     </Routes>
   </BrowserRouter>
 );
