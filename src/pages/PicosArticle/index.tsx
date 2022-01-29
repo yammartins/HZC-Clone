@@ -5,6 +5,8 @@ import Menu from '~/layouts/Menu';
 import SectionName from '~/layouts/SectionName';
 
 import { ReactComponent as ViewIcon } from '../../assets/icons/views.svg';
+import Imagem1 from '../../assets/imagem1.png';
+import Imagem2 from '../../assets/imagem2.png';
 import Location from '../../assets/pico.png';
 import Pico1 from '../../assets/pico1.png';
 import Pico2 from '../../assets/pico2.png';
@@ -15,7 +17,7 @@ import Samurai from '../../assets/samurai.jpg';
 import Schiller from '../../assets/schiller.jpg';
 
 const PicosArticle: React.FC = () => (
-  <div className="flex w-screen">
+  <div className="flex w-full">
     <Menu />
     <main className="">
       <SectionName />
@@ -40,7 +42,7 @@ const PicosArticle: React.FC = () => (
               </span>
             </div>
             <div className="text">
-              <p>
+              <p className="paragraph">
                 Venenatis maecenas animi eiusmod nostrum, mauris alias quas.
                 Recusandae, ridiculus porta nec eaque? Excepteur aut do
                 quisquam ultricies, quos! Morbi ad magna sunt anim imperdiet
@@ -54,6 +56,39 @@ const PicosArticle: React.FC = () => (
                 hendrerit duis proin excepturi, torquent et, sem,
                 eu temporibus aut placerat nostrum.
                 Parturient perspiciatis nesciunt. Earum ligula habitasse quo laoreet.
+              </p>
+              <img src={Location} alt="Foto do texto" className="photo" />
+              <p className="paragraph">
+                Venenatis maecenas animi eiusmod nostrum, mauris alias quas.
+                Recusandae, ridiculus porta nec eaque? Excepteur aut do quisquam ultricies, quos!
+                Morbi ad magna sunt anim imperdiet iusto hymenaeos voluptate?
+                Nostrum sapien hic non occaecat! Facilis interdum debitis,
+                deserunt fermentum quas mattis interdum penatibus.
+                Dictum laboris diamlorem, repellat, aut ligula.
+                Quam tellus, facilisis possimus? Quidem nunc!
+                Aenean sem! Curabitur eos felis porro integer consectetuer consectetur.
+                Porttitor, convallis, sapien earum inventore dapibus facilis, facilis semper.
+                Tempora senectus dictumst odio vivamus pariatur, praesentium laoreet,
+                hendrerit duis proin excepturi, torquent et, sem, eu temporibus aut placerat
+                nostrum. Parturient perspiciatis nesciunt. Earum ligula habitasse quo laoreet.
+              </p>
+              <div className="flex gap-8">
+                <img src={Imagem1} alt="" className="photo" />
+                <img src={Imagem2} alt="" className="photo" />
+              </div>
+              <p className="paragraph">
+                Venenatis maecenas animi eiusmod nostrum, mauris alias quas.
+                Recusandae, ridiculus porta nec eaque? Excepteur aut do quisquam ultricies, quos!
+                Morbi ad magna sunt anim imperdiet iusto hymenaeos voluptate?
+                Nostrum sapien hic non occaecat! Facilis interdum debitis,
+                deserunt fermentum quas mattis interdum penatibus.
+                Dictum laboris diamlorem, repellat, aut ligula.
+                Quam tellus, facilisis possimus? Quidem nunc!
+                Aenean sem! Curabitur eos felis porro integer consectetuer consectetur.
+                Porttitor, convallis, sapien earum inventore dapibus facilis, facilis semper.
+                Tempora senectus dictumst odio vivamus pariatur, praesentium laoreet,
+                hendrerit duis proin excepturi, torquent et, sem, eu temporibus aut placerat
+                nostrum. Parturient perspiciatis nesciunt. Earum ligula habitasse quo laoreet.
               </p>
             </div>
           </div>

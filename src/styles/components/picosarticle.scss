@@ -6,7 +6,7 @@
       @apply flex flex-col gap-4;
 
       .text-of-article {
-        @apply flex flex-col gap-4;
+        @apply flex flex-col gap-4 max-w-[52rem];
 
         .profile-author {
           @apply flex justify-between;
@@ -17,6 +17,14 @@
 
           .views {
            @apply flex gap-1 items-center text-wt text-leg font-normal;
+          }
+        }
+
+        .text {
+          @apply gap-4 flex flex-col;
+
+          .paragraph {
+            @apply text-wt text-menu font-normal;
           }
         }
       }
