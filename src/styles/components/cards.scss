@@ -5,7 +5,7 @@
     .box-arts,
     .box-video,
     .box-post {
-      @apply flex flex-col max-w-[16rem] max-h-[19rem];
+      @apply flex flex-col max-w-[16rem] min-h-[19rem];
 
       &-description {
         @apply flex flex-col bg-n80 p-4 relative gap-2 rounded-b-2xl;

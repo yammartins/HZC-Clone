@@ -6,6 +6,7 @@ import {
 
 import Homepage from './pages/Homepage';
 import Picos from './pages/Picos';
+import PicosArticle from './pages/PicosArticle';
 
 const Router: React.FC = () => (
   <BrowserRouter>
@@ -14,7 +15,7 @@ const Router: React.FC = () => (
 
       <Route path="/picos" element={<Picos />} />
 
-      <Route path="/picos/article" element={<Article />} />
+      <Route path="/picos/article" element={<PicosArticle />} />
 
     </Routes>
   </BrowserRouter>

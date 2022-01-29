@@ -1,0 +1,29 @@
+@layer components {
+  .pico-box {
+    @apply flex pl-[16.375rem] pt-28 pr-[3.625rem] pb-8 gap-8 justify-between;
+
+    .body-of-article {
+      @apply flex flex-col gap-4;
+
+      .text-of-article {
+        @apply flex flex-col gap-4;
+
+        .profile-author {
+          @apply flex justify-between;
+
+          .author {
+            @apply flex gap-2 items-center font-normal text-normal text-wt;
+          }
+
+          .views {
+           @apply flex gap-1 items-center text-wt text-leg font-normal;
+          }
+        }
+      }
+    }
+
+    .pico-more {
+      @apply flex flex-col gap-4;
+    }
+  }
+}
