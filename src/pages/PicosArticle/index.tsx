@@ -72,9 +72,9 @@ const PicosArticle: React.FC = () => (
                 hendrerit duis proin excepturi, torquent et, sem, eu temporibus aut placerat
                 nostrum. Parturient perspiciatis nesciunt. Earum ligula habitasse quo laoreet.
               </p>
-              <div className="flex gap-8">
-                <img src={Imagem1} alt="" className="photo" />
-                <img src={Imagem2} alt="" className="photo" />
+              <div className="flex gap-4">
+                <img src={Imagem1} alt="" className="w-full" />
+                <img src={Imagem2} alt="" className="w-full" />
               </div>
               <p className="paragraph">
                 Venenatis maecenas animi eiusmod nostrum, mauris alias quas.
