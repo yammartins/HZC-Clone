@@ -14,10 +14,10 @@
       }
 
       .notification {
-        @apply flex relative;
+        @apply flex relative items-center;
 
         &::before {
-          @apply content-[''] w-2 h-2 absolute rounded-full flex-shrink bg-gr left-[1.1rem] top-4; 
+          @apply content-[''] w-2 h-2 absolute rounded-full flex-shrink bg-gr left-[1rem] top-[1.4rem]; 
         }
       }
     }

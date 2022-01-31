@@ -7,9 +7,9 @@ import Picture from '../../assets/profile.jpeg';
 import { SectionNameHandles } from './types';
 
 const SectionName: React.FC<SectionNameHandles> = ({
-  server,
+  server = true,
   servername,
-  button,
+  button = false,
   profile,
   name,
   hasNotifications,
@@ -19,20 +19,20 @@ const SectionName: React.FC<SectionNameHandles> = ({
       {server === true ? (<h2 className="font-bold font-sans text-h3 text-wt mr-auto">{servername}</h2>) : (
         <span className="font-bold font-sans text-h3 text-wt mr-auto gap-2">
           <LeftIcon />
-          {' '}
           Retornar para a página anterior.
         </span>
       )}
     </div>
-    {button === true && (
-      <a className="link" href="algumacoisa">
-        <Button />
-        {' '}
-        Criar um novo pico
-        {' '}
-      </a>
-    )}
+
     <div className="profile">
+      {button === true && (
+        <>
+          <a className="link" href="algumacoisa">
+            <Button icon="plus" size="md" appearance="outline" label="Criar um novo pico" />
+          </a>
+          <div className="h-8 w-[1px] bg-grey mx-8" />
+        </>
+      )}
       <div className="profile-data">
         <div className="picture">
           <img src={profile} alt="foto do usuário" />

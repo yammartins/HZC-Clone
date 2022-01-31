@@ -38,7 +38,7 @@ const Homepage: React.FC = () => (
   <div className="flex w-full">
     <Menu />
     <main className="flex flex-col w-full">
-      <SectionName />
+      <SectionName servername="Início" profile={Diomedes} name="Ernst Junger" hasNotifications button />
       <div className="content">
         <div className="videos">
           <div className="wrapper-featured">
