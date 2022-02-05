@@ -16,9 +16,9 @@
       .notification {
         @apply flex relative items-center;
 
-        &::before {
-          @apply content-[''] w-2 h-2 absolute rounded-full flex-shrink bg-gr left-[1rem] top-[1.4rem]; 
-        }
+        // &::before {
+        //   @apply content-[''] w-2 h-2 absolute rounded-full flex-shrink bg-gr left-[1rem] top-[1.4rem]; 
+        // }
       }
     }
   }

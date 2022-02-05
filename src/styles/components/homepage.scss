@@ -47,6 +47,10 @@
           @apply rounded-2xl bg-n80 p-4 gap-4 flex flex-col min-w-[16rem] max-h-[31rem]; 
         }
       }
-    }     
+    }
+    
+    &::-webkit-scrollbar {
+      @apply overflow-hidden;
+    }
   }
 }

@@ -37,5 +37,5 @@ module.exports = {
       smbut: ['14px', '16px'],
       menu: ['16px', '32px']
     },
-  }
+  },
 };

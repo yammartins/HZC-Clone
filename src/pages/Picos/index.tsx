@@ -23,7 +23,7 @@ const Picos: React.FC = () => (
   <div className="flex w-full">
     <Menu />
     <main className="w-full h-full flex">
-      <SectionName />
+      <SectionName server servername="Picos" profile={Diomedes} name="Ernst Junger" hasNotifications button />
       <div className="picos">
         <div className="picos-location">
           <div className="map-of-points">

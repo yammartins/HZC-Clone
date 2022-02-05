@@ -20,7 +20,7 @@ const PicosArticle: React.FC = () => (
   <div className="flex w-full">
     <Menu />
     <main className="">
-      <SectionName />
+      <SectionName profile={Diomedes} name="Ernst Junger" hasNotifications />
       <div className="pico-box">
         <div className="body-of-article">
           <div className="article-image">
