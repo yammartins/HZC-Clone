@@ -21,7 +21,7 @@ const Menu: React.FC = () => (
         </Link>
       </div>
       <div className="aside-menu-icons">
-        <Link to="/" className="link">
+        <Link to="/videos" className="link">
           <IconVideo />
           Vídeos
         </Link>

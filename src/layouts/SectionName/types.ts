@@ -4,5 +4,5 @@ export interface SectionNameHandles {
   button?: boolean;
   profile: string;
   name: string;
-  hasNotifications: boolean;
+  hasNotifications?: boolean;
 }
