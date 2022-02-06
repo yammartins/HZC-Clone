@@ -5,7 +5,6 @@ import Button from '~/components/Button';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
 import { ReactComponent as LeftIcon } from '../../assets/icons/left.svg';
 import { ReactComponent as NotificationIcon } from '../../assets/icons/notifications.svg';
-import Picture from '../../assets/profile.jpeg';
 import { SectionNameHandles } from './types';
 
 const SectionName: React.FC<SectionNameHandles> = ({
