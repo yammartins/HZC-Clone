@@ -1,6 +1,5 @@
 export interface SectionNameHandles {
-  server?: boolean;
-  servername?: string;
+  server?: string;
   button?: boolean;
   profile: string;
   name: string;

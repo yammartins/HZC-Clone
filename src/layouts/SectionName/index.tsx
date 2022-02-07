@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '~/components/Button';
 
@@ -9,51 +9,58 @@ import { SectionNameHandles } from './types';
 
 const SectionName: React.FC<SectionNameHandles> = ({
   server,
-  servername,
   button = false,
   profile,
   name,
   hasNotifications = false,
-}) => (
-  <header className="section-channel">
-    <div className="channel-text">
-      {server === true ? (<h2 className="font-bold font-sans text-h3 text-wt mr-auto">{servername}</h2>) : (
-        <Link to="/picos">
-          <span className="font-normal font-sans text-normal text-wt mr-auto gap-2 flex items-center">
-            <LeftIcon />
-            Retornar para a página anterior.
-          </span>
-        </Link>
-      )}
-    </div>
+}) => {
+  const navigate = useNavigate();
 
-    {/* // Corrigir o padding em telas com e sem botão */}
+  return (
+    <header className="section-channel">
+      <div className="channel-text">
+        {server
+          ? (<h2 className="font-bold font-sans text-h3 text-wt mr-auto">{server}</h2>)
+          : (
+            <span
+              className="font-normal font-sans text-normal text-wt mr-auto gap-2 flex items-center cursor-pointer"
+              onClick={() => navigate(-1)}
+              role="presentation"
+            >
+              <LeftIcon />
+              Retornar para a página anterior.
+            </span>
+          )}
+      </div>
 
-    <div className="profile">
-      {button === true && (
-        <>
-          <a className="link" href="algumacoisa">
-            <Button icon="plus" size="md" appearance="outline" label="Criar um novo pico" />
-          </a>
-          <div className="h-8 w-[1px] bg-grey mx-8" />
-        </>
-      )}
-      <div className="profile-data">
-        <div className="picture">
-          <img src={profile} alt="foto do usuário" />
+      {/* // Corrigir o padding em telas com e sem botão */}
+
+      <div className="profile">
+        {button && (
+          <>
+            <a className="link" href="algumacoisa">
+              <Button icon="plus" size="md" appearance="outline" label="Criar um novo pico" />
+            </a>
+            <div className="h-8 w-[1px] bg-grey mx-8" />
+          </>
+        )}
+        <div className="profile-data">
+          <div className="picture">
+            <img src={profile} alt="foto do usuário" />
+          </div>
+          <span className="font-sans text-normal font-normal text-grey">{name}</span>
+          <div className="menu">
+            <ArrowIcon />
+          </div>
         </div>
-        <span className="font-sans text-normal font-normal text-grey">{name}</span>
-        <div className="menu">
-          <ArrowIcon />
+        <div className="divider" />
+        <div className="notification">
+          <NotificationIcon />
+          {hasNotifications === true && (<div className="w-2 h-2 absolute rounded-full flex-shrink bg-gr left-4 top-[1.4rem]" />)}
         </div>
       </div>
-      <div className="divider" />
-      <div className="notification">
-        <NotificationIcon />
-        {hasNotifications === true && (<div className="w-2 h-2 absolute rounded-full flex-shrink bg-gr left-[1rem] top-[1.4rem]" />)}
-      </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 export default SectionName;

@@ -10,7 +10,7 @@ import { ReactComponent as IconShoppingCart } from '~/assets/icons/shopping-cart
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   icon?: 'plus' | 'house' | 'play' | 'cloud' | 'cart' | string;
-  size: 'hg' | 'md',
+  size?: 'hg' | 'md',
   loading?: boolean;
   appearance?: 'solid' | 'outline',
   label?: string;
@@ -21,7 +21,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 const Button: React.FC<ButtonProps> = ({
   full = false,
-  size,
+  size = 'md',
   className,
   loading = false,
   label,
