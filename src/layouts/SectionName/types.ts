@@ -1,6 +1,6 @@
 export interface SectionNameHandles {
   server?: string;
-  button?: boolean;
+  button?: () => void;
   profile: string;
   name: string;
   hasNotifications?: boolean;

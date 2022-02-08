@@ -9,7 +9,7 @@ import { SectionNameHandles } from './types';
 
 const SectionName: React.FC<SectionNameHandles> = ({
   server,
-  button = false,
+  button,
   profile,
   name,
   hasNotifications = false,
@@ -38,9 +38,13 @@ const SectionName: React.FC<SectionNameHandles> = ({
       <div className="profile">
         {button && (
           <>
-            <a className="link" href="algumacoisa">
-              <Button icon="plus" size="md" appearance="outline" label="Criar um novo pico" />
-            </a>
+            <Button
+              icon="plus"
+              size="md"
+              appearance="outline"
+              label="Criar um novo pico"
+              onClick={button}
+            />
             <div className="h-8 w-[1px] bg-grey mx-8" />
           </>
         )}
