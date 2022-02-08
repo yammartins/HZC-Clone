@@ -1,9 +1,13 @@
 @layer components {
   .new-video {
-    @apply flex flex-col;
+    @apply w-screen h-screen bg-bl bg-opacity-90 absolute;
 
-    .header {
-      @apply flex justify-between; 
+    .box {
+      @apply flex flex-col w-[50rem] p-8 rounded-2xl absolute drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)]; 
+
+      .header {
+        @apply flex justify-between;
+      }
     }
   }
 }
