@@ -1,0 +1,9 @@
+@layer components {
+  .new-video {
+    @apply flex flex-col;
+
+    .header {
+      @apply flex justify-between; 
+    }
+  }
+}
