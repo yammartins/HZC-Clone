@@ -1,12 +1,20 @@
 @layer components {
   .new-video {
-    @apply w-screen h-screen bg-bl bg-opacity-90 absolute;
+    @apply w-full h-full bg-bl/90 fixed left-0 top-0 flex z-[1000];
 
     .box {
-      @apply flex flex-col w-[50rem] p-8 rounded-2xl absolute drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)]; 
+      @apply flex flex-col w-[50rem] p-8 rounded-2xl relative drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)] m-auto z-50 bg-n90; 
 
       .header {
-        @apply flex justify-between;
+        @apply flex justify-between text-wt;
+      }
+
+      .body {
+        @apply text-center items-center gap-2 flex flex-col my-40;
+
+        .icon {
+          @apply flex rounded-full bg-bl w-24 h-24 text-center;
+        }
       }
     }
   }

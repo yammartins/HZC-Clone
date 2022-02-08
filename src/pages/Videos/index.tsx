@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -24,86 +26,87 @@ import Right3 from '../../assets/right-3.png';
 import Right5 from '../../assets/right-5.png';
 import Samurai from '../../assets/samurai.jpg';
 import Button from '../../components/Button';
-import { Link } from 'react-router-dom';
 
 const Videos: React.FC = () => (
-  <main className="flex flex-col w-full">
-    <SectionName server="Videos" button name="Yammartins" profile={Photo} />
-    <div className="content">
-      <div className="videos">
-        <div className="wrapper-featured">
-          <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" icon="play" button="Assistir agora" type="video" info="Vídeo em destaque" />
-          <div className="most-recent">
-            <div className="flex gap-2">
-              <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
-              <a href="#morevideos" className="font-sans text-smbut text-blma">
-                Ver todos
-              </a>
-            </div>
-            <div className="most-recent-list">
-              <MiniCards id={1} image={Right1} author="Júlia Fonseca" title="HZC - Love machine" />
-              <MiniCards id={2} image={Right2} author="Júlia Fonseca" title="HZC - Vol.3" />
-              <MiniCards id={3} image={Right3} author="O Rappa" title="HZC - Pescaria na Urca" />
-              <MiniCards id={4} image={Farney} author="Dick Farney" title="Meus momentos" />
-              <MiniCards id={5} image={Right5} author="Yamandu Costa" title="Histórias do violão" />
+  <>
+    <main className="flex flex-col w-full">
+      <SectionName server="Videos" button name="Yammartins" profile={Photo} />
+      <div className="content">
+        <div className="videos">
+          <div className="wrapper-featured">
+            <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" icon="play" button="Assistir agora" type="video" info="Vídeo em destaque" />
+            <div className="most-recent">
+              <div className="flex gap-2">
+                <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
+                <a href="#morevideos" className="font-sans text-smbut text-blma">
+                  Ver todos
+                </a>
+              </div>
+              <div className="most-recent-list">
+                <MiniCards id={1} image={Right1} author="Júlia Fonseca" title="HZC - Love machine" />
+                <MiniCards id={2} image={Right2} author="Júlia Fonseca" title="HZC - Vol.3" />
+                <MiniCards id={3} image={Right3} author="O Rappa" title="HZC - Pescaria na Urca" />
+                <MiniCards id={4} image={Farney} author="Dick Farney" title="Meus momentos" />
+                <MiniCards id={5} image={Right5} author="Yamandu Costa" title="Histórias do violão" />
+              </div>
             </div>
           </div>
-        </div>
-        <h2 className="font-bold text-h3 text-wt">
-          Vídeos mais vistos
-        </h2>
+          <h2 className="font-bold text-h3 text-wt">
+            Vídeos mais vistos
+          </h2>
 
-        <div className="most-seen">
-          <Swiper
-            modules={[Pagination]}
-            spaceBetween={32}
-            slidesPerView={4}
-            pagination={{
-              clickable: true,
-            }}
-          >
-            <SwiperSlide>
-            <Link to="/videos/article">
-              <Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" />
-            </Link>  
+          <div className="most-seen">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={32}
+              slidesPerView={4}
+              pagination={{
+                clickable: true,
+              }}
+            >
+              <SwiperSlide>
+                <Link to="/videos/article">
+                  <Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" />
+                </Link>
               </SwiperSlide>
-            <SwiperSlide>
-              <Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" />
+              <SwiperSlide>
+                <Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" />
               </SwiperSlide>
-            <SwiperSlide>
-              <Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" />
+              <SwiperSlide>
+                <Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" />
               </SwiperSlide>
-            <SwiperSlide>
-              <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+              <SwiperSlide>
+                <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
               </SwiperSlide>
-            <SwiperSlide>
-              <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+              <SwiperSlide>
+                <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
               </SwiperSlide>
-            <SwiperSlide>
-              <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+              <SwiperSlide>
+                <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
               </SwiperSlide>
-          </Swiper>
+            </Swiper>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
     <div className="new-video">
       <div className="box">
-      <div className="header">
-        <h2>Adicionar novo vídeo</h2>
-        <CloseIcon />
-      </div>
-      <div className="body">
-        <div className="icon">
-          <CloudIcon />
+        <div className="header">
+          <h2 className="text-h3 font-bold">Adicionar novo vídeo</h2>
+          <CloseIcon />
         </div>
-        <span>Arraste e solte o vídeo para iniciar o upload</span>
-        <small>Seu vídeo será publicado na plataforma</small>
-        <Button icon="plus" label="Selecionar arquivos" submit />
-      </div>
-      <p>*Cuidado! Alguns formatos de vídeo podem não funcionar.</p>
+        <div className="body">
+          <div className="icon">
+            <CloudIcon className="text-wt self-center m-auto w-10 h-10" />
+          </div>
+          <h4 className="text-h4 text-wt font-bold">Arraste e solte o vídeo para iniciar o upload</h4>
+          <span className="text-menu text-wt/80 mb-2">Seu vídeo será publicado na plataforma</span>
+          <Button icon="plus" label="Selecionar arquivos" submit size="hg" />
+        </div>
+        <small className="text-leg text-wt/90 mx-auto">Cuidado! Alguns formatos de vídeo podem não funcionar.</small>
       </div>
     </div>
-  </main>
+  </>
 );
 
 export default Videos;
