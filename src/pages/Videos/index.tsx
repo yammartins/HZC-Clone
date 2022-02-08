@@ -12,6 +12,8 @@ import Video3 from '../../assets/album-3.png';
 import COF from '../../assets/banner.jpg';
 import Cruyff from '../../assets/cruyff.jpeg';
 import Farney from '../../assets/farney.jpeg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
+import { ReactComponent as CloudIcon } from '../../assets/icons/cloud.svg';
 import Header1 from '../../assets/mainheader-1.svg';
 import Olavo from '../../assets/olavo.jpeg';
 import Photo from '../../assets/pp.jpg';
@@ -21,6 +23,8 @@ import Right2 from '../../assets/right-2.png';
 import Right3 from '../../assets/right-3.png';
 import Right5 from '../../assets/right-5.png';
 import Samurai from '../../assets/samurai.jpg';
+import Button from '../../components/Button';
+import { Link } from 'react-router-dom';
 
 const Videos: React.FC = () => (
   <main className="flex flex-col w-full">
@@ -58,14 +62,45 @@ const Videos: React.FC = () => (
               clickable: true,
             }}
           >
-            <SwiperSlide><Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" /></SwiperSlide>
-            <SwiperSlide><Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" /></SwiperSlide>
-            <SwiperSlide><Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" /></SwiperSlide>
-            <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
-            <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
-            <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
+            <SwiperSlide>
+            <Link to="/videos/article">
+              <Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" />
+            </Link>  
+              </SwiperSlide>
+            <SwiperSlide>
+              <Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" />
+              </SwiperSlide>
+            <SwiperSlide>
+              <Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" />
+              </SwiperSlide>
+            <SwiperSlide>
+              <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+              </SwiperSlide>
+            <SwiperSlide>
+              <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+              </SwiperSlide>
+            <SwiperSlide>
+              <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+              </SwiperSlide>
           </Swiper>
         </div>
+      </div>
+    </div>
+    <div className="new-video">
+      <div className="box">
+      <div className="header">
+        <h2>Adicionar novo vídeo</h2>
+        <CloseIcon />
+      </div>
+      <div className="body">
+        <div className="icon">
+          <CloudIcon />
+        </div>
+        <span>Arraste e solte o vídeo para iniciar o upload</span>
+        <small>Seu vídeo será publicado na plataforma</small>
+        <Button icon="plus" label="Selecionar arquivos" submit />
+      </div>
+      <p>*Cuidado! Alguns formatos de vídeo podem não funcionar.</p>
       </div>
     </div>
   </main>
