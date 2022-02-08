@@ -1,0 +1,25 @@
+@layer components {
+  .publish-box {
+    @apply fixed flex bg-bl/90 top-0 left-0 w-full h-full duration-300 transition-all ease-in-out;
+
+    .publish-wrapper {
+      @apply w-[50rem] flex flex-col drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)] m-auto;
+
+      .video {
+       @apply bg-n90 flex flex-col p-8 rounded-t-2xl;
+
+        .header {
+          @apply justify-between flex text-wt;
+        }
+
+        .body {
+          @apply flex flex-col;
+
+          .video-register {
+            @apply flex gap-8;
+          }
+        }
+      }
+    }
+  }
+}
