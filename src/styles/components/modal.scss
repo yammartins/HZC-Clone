@@ -1,57 +1,24 @@
 @layer components {
   .modal-box {
-    @apply fixed flex bg-bl/90 top-0 left-0 w-full h-full duration-300 transition-all ease-in-out z-50;
+    @apply w-full h-full bg-bl/90 fixed left-0 top-0 flex z-[100] opacity-0 pointer-events-none transition-all duration-300 ease-in-out;
+
+    &.is-show {
+      @apply opacity-100 pointer-events-auto;
+
+      .modal-wrapper {
+        @apply top-0;
+      }
+    }
 
     .modal-wrapper {
-      @apply w-[50rem] flex flex-col  m-auto drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)];
+      @apply flex flex-col w-[50rem] p-8 rounded-2xl relative drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)] m-auto z-50 bg-n90 top-6 transition-all duration-300 ease-in-out;
 
       .header {
         @apply justify-between flex text-wt;
       }
-      
-      .video {
-       @apply bg-n90 flex flex-col p-8 rounded-t-2xl;
-
-
-        .body {
-          @apply flex flex-col;
-
-          .video-register {
-            @apply flex gap-8;
-
-            .name {
-              @apply w-[34rem] rounded-t-lg bg-n80 flex flex-col py-2 px-4 mb-12;
-            }
-
-            .video-info {
-              @apply flex flex-col gap-4;
-
-              .link, .title {
-                @apply flex flex-col;
-              }
-            }
-          }
-
-          .miniature {
-            @apply flex flex-col gap-4 mt-8;
-
-            .wrapper {
-              @apply flex gap-4;
-
-              .add-more {
-                @apply flex flex-col items-center text-center gap-2 text-wt h-[6.5rem] w-[7.75rem] bg-n80 rounded-lg text-sm p-4 justify-center; 
-              }
-
-              img {
-                @apply h-[6.5rem] w-[7.75rem] rounded-lg;
-              }
-            }
-          }
-        }
-      }
 
       .footer {
-        @apply flex justify-between bg-bl p-4 w-[50rem] rounded-b-2xl;
+        @apply flex justify-between bg-bl p-4 rounded-b-2xl;
 
         .progress-bar {
           @apply flex gap-2 items-center;

@@ -2,7 +2,6 @@ import { ReactComponent as PhotoIcon } from '../../assets/icons/photo.svg';
 import Mini from '../../assets/mini-1.png';
 import Minii from '../../assets/mini-2.png';
 import Miniii from '../../assets/mini-3.png';
-import Button from '../Button';
 
   <div className="video">
     <p className="text-leg font-bold text-wt mt-[3.5rem] mb-4">Informações do vídeo</p>
