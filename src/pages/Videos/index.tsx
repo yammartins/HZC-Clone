@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Cards from '~/components/Cards';
 import MainCards from '~/components/MainCards';
 import MiniCards from '~/components/MiniCards';
+import PublishVideo from '~/layouts/PublishVideo';
 import SectionName from '~/layouts/SectionName';
 import UploadVideo from '~/layouts/UploadVideo';
 
@@ -97,7 +98,8 @@ const Videos: React.FC = () => {
           </div>
         </div>
       </main>
-      <UploadVideo show={upload} onShow={onUpload} onUpload={onOpen} />
+      <UploadVideo show={upload} onShow={onUpload} onPublish={onOpen} />
+      <PublishVideo show={open} onShow={onOpen} />
     </>
   );
 };

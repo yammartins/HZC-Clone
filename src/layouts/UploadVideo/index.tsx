@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 import { UploadVideoHandles } from './types';
 
 const UploadVideo: React.FC<UploadVideoHandles> = ({
-  onUpload,
+  onPublish,
   ...rest
 }) => (
   <Modal
@@ -18,7 +18,7 @@ const UploadVideo: React.FC<UploadVideoHandles> = ({
       </div>
       <h4 className="text-h4 text-wt font-bold">Arraste e solte o vídeo para iniciar o upload</h4>
       <span className="text-menu text-wt/80 mb-2">Seu vídeo será publicado na plataforma</span>
-      <Button icon="plus" label="Selecionar arquivos" submit size="hg" onClick={() => onUpload(true)} />
+      <Button icon="plus" label="Selecionar arquivos" submit size="hg" onClick={() => onPublish(true)} />
     </div>
     <small className="text-leg text-wt/90 mx-auto">Cuidado! Alguns formatos de vídeo podem não funcionar.</small>
   </Modal>

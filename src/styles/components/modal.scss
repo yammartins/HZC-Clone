@@ -11,14 +11,14 @@
     }
 
     .modal-wrapper {
-      @apply flex flex-col w-[50rem] p-8 rounded-2xl relative drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)] m-auto z-50 bg-n90 top-6 transition-all duration-300 ease-in-out;
+      @apply flex flex-col w-[50rem] px-8 pt-8 rounded-2xl relative drop-shadow-[32px_32px_32px_rgba(0,0,0,0.16)] m-auto z-50 bg-n90 top-6 transition-all duration-300 ease-in-out;
 
       .header {
         @apply justify-between flex text-wt;
       }
 
       .footer {
-        @apply flex justify-between bg-bl p-4 rounded-b-2xl;
+        @apply flex justify-between bg-bl p-4 rounded-b-2xl mt-6 w-full mx-4;
 
         .progress-bar {
           @apply flex gap-2 items-center;

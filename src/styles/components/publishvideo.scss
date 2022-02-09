@@ -1,0 +1,41 @@
+@layer components {
+  .video {
+    @apply bg-n90 flex flex-col;
+
+     .video-body {
+       @apply flex flex-col;
+
+       .video-register {
+         @apply flex gap-8;
+
+         .name {
+           @apply w-[34rem] rounded-t-lg bg-n80 flex flex-col py-2 px-4 mb-12;
+         }
+
+         .video-info {
+           @apply flex flex-col gap-4;
+
+           .link, .title {
+             @apply flex flex-col;
+           }
+         }
+       }
+
+       .miniature {
+         @apply flex flex-col gap-4 mt-8;
+
+         .wrapper {
+           @apply flex gap-4;
+
+           .add-more {
+             @apply flex flex-col items-center text-center gap-2 text-wt h-[6.5rem] w-[7.75rem] bg-n80 rounded-lg text-sm p-4 justify-center; 
+           }
+
+           img {
+             @apply h-[6.5rem] w-[7.75rem] rounded-lg;
+           }
+         }
+       }
+    }
+  }
+}
