@@ -21,27 +21,31 @@ const PublishVideo: React.FC = () => (
           <div className="video-register">
             <form action="">
               <div className="name">
-                <span>Nome do vídeo</span>
-                <input type="text" className="xx" />
+                <span className="text-sm text-blma">Nome do vídeo</span>
+                <input type="text" className="bg-n80 outline-0 text-wt" />
               </div>
-              <input type="text" className="description" />
+              <input type="text" className="bg-n80 rounded-t-lg w-[34rem] h-[7.5rem] outline-0 placeholder:text-grey px-4 py-2 text-inherit text-grey align-top relative pb-20" placeholder="Descrição" />
             </form>
             <div className="video-info">
-              <div className="upload">
-                <img src="" alt="" />
-              </div>
+              <img src={Minii} alt="" />
               <div className="link">
-                <span>Link do vídeo</span>
-                <a href="https://h.zc/3342033">https://h.zc/3342033</a>
+                <span className="text-grey text-sm">Link do vídeo</span>
+                <a
+                  href="https://h.zc/3342033"
+                  className="underline text-blma text-leg"
+                >
+                  https://h.zc/3342033
+
+                </a>
               </div>
-              <div className="name">
-                <span>Nome do vídeo</span>
-                <small>hzc-gatin-g-morro.mp4</small>
+              <div className="title">
+                <span className="text-grey text-sm">Nome do vídeo</span>
+                <small className="text-wt text-leg">hzc-gatin-g-morro.mp4</small>
               </div>
             </div>
           </div>
           <div className="miniature">
-            <h6>Miniatura</h6>
+            <h6 className="text-leg text-wt">Miniatura</h6>
             <div className="wrapper">
               <div className="add-more">
                 <PhotoIcon />
@@ -56,12 +60,12 @@ const PublishVideo: React.FC = () => (
       </div>
       <div className="footer">
         <div className="progress-bar">
-          <span>
-            <span />
+          <span className="w-[20rem] h-[0.25rem] bg-n80 rounded-[2rem] relative">
+            <span className="bg-blma w-[33%] h-full absolute" />
           </span>
-          33%
+          <span className="text-leg text-wt">33%</span>
         </div>
-        <Button icon="cloud" label="Publicar vídeo" />
+        <Button icon="cloud" label="Publicar vídeo" className="!m-0" />
       </div>
     </div>
   </div>
