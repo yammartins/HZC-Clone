@@ -8,6 +8,7 @@ import Cards from '~/components/Cards';
 import MainCards from '~/components/MainCards';
 import MiniCards from '~/components/MiniCards';
 import SectionName from '~/layouts/SectionName';
+import UploadVideo from '~/layouts/UploadVideo';
 
 import Video1 from '../../assets/album-1.png';
 import Video2 from '../../assets/album-2.png';
@@ -15,8 +16,6 @@ import Video3 from '../../assets/album-3.png';
 import COF from '../../assets/banner.jpg';
 import Cruyff from '../../assets/cruyff.jpeg';
 import Farney from '../../assets/farney.jpeg';
-import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
-import { ReactComponent as CloudIcon } from '../../assets/icons/cloud.svg';
 import Header1 from '../../assets/mainheader-1.svg';
 import Olavo from '../../assets/olavo.jpeg';
 import Photo from '../../assets/pp.jpg';
@@ -26,17 +25,17 @@ import Right2 from '../../assets/right-2.png';
 import Right3 from '../../assets/right-3.png';
 import Right5 from '../../assets/right-5.png';
 import Samurai from '../../assets/samurai.jpg';
-import Button from '../../components/Button';
 
 const Videos: React.FC = () => {
-  const [modal, onModal] = useState(false);
+  const [upload, onUpload] = useState(false);
+  const [open, onOpen] = useState(false);
 
   return (
     <>
       <main className="flex flex-col w-full">
         <SectionName
           server="Videos"
-          button={() => onModal(true)}
+          button={() => onUpload(true)}
           name="Yammartins"
           profile={Photo}
         />
@@ -98,26 +97,7 @@ const Videos: React.FC = () => {
           </div>
         </div>
       </main>
-      <div className={`new-video ${modal ? 'is-show' : ''}`}>
-        <div className="box">
-          <div className="header">
-            <h2 className="text-h3 font-bold">Adicionar novo vídeo</h2>
-            <CloseIcon
-              onClick={() => onModal(! true)}
-              className="cursor-pointer"
-            />
-          </div>
-          <div className="body">
-            <div className="icon">
-              <CloudIcon className="text-wt self-center m-auto w-10 h-10" />
-            </div>
-            <h4 className="text-h4 text-wt font-bold">Arraste e solte o vídeo para iniciar o upload</h4>
-            <span className="text-menu text-wt/80 mb-2">Seu vídeo será publicado na plataforma</span>
-            <Button icon="plus" label="Selecionar arquivos" submit size="hg" />
-          </div>
-          <small className="text-leg text-wt/90 mx-auto">Cuidado! Alguns formatos de vídeo podem não funcionar.</small>
-        </div>
-      </div>
+      <UploadVideo show={upload} onShow={onUpload} onUpload={onOpen} />
     </>
   );
 };

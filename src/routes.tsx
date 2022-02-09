@@ -4,7 +4,6 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Modal from './components/Modal';
 import App from './layouts/App';
 import Homepage from './pages/Homepage';
 import Picos from './pages/Picos';
@@ -25,8 +24,6 @@ const Router: React.FC = () => (
         <Route path="videos" element={<Videos />} />
 
         <Route path="videos/article" element={<VideosArticle />} />
-
-        <Route path="modal" element={<Modal />} />
 
       </Route>
     </Routes>

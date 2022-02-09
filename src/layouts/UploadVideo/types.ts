@@ -1,8 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
-export interface ModalHandles {
-  name: string;
+export interface UploadVideoHandles {
   show: boolean;
   onShow: Dispatch<SetStateAction<boolean>>;
-  footer?: boolean;
+  onUpload: Dispatch<SetStateAction<boolean>>;
 }
