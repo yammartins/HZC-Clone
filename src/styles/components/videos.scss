@@ -1,6 +1,6 @@
 @layer components {
   .new-video {
-    @apply w-full h-full bg-bl/90 fixed left-0 top-0 flex z-[1000] opacity-0 pointer-events-none transition-all duration-300 ease-in-out;
+    @apply w-full h-full bg-bl/90 fixed left-0 top-0 flex z-[100] opacity-0 pointer-events-none transition-all duration-300 ease-in-out;
 
     &.is-show {
       @apply opacity-100 pointer-events-auto;
