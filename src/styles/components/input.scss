@@ -1,6 +1,21 @@
 @layer components {
   .main {
-    @apply flex flex-col bg-n80 rounded-t-lg w-full px-4 py-2;
+    @apply flex flex-col relative bg-n80 rounded-t-lg w-full px-4 py-2;
+
+    &.is-focus {
+      
+      label {
+        @apply text-blma;
+
+        .login {
+          @apply text-wt;
+        }
+      }
+
+      &::before {
+        @apply content-[''] h-[2px] w-full absolute bg-blma left-0 bottom-0;
+      }
+    }
 
     label {
       @apply flex flex-col text-sm text-wt gap-2 w-full;

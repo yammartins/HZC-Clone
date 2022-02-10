@@ -1,7 +1,7 @@
-export interface InputHandles {
+import { InputHTMLAttributes } from 'react';
+
+export interface InputHandles extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
-  type: string;
-  placeholder?: string;
   way: string;
   input: string;
 }

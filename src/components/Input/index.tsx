@@ -1,18 +1,22 @@
+import { useState } from 'react';
+
 import { InputHandles } from './types';
 
 const Input: React.FC<InputHandles> = ({
   label,
-  type,
-  placeholder,
   way,
-  input,
-}) => (
-  <div className="main">
-    <label htmlFor={way}>
-      {label}
-      <input type={type} className={input} placeholder={placeholder} />
-    </label>
-  </div>
-);
+  ...rest
+}) => {
+  const [focus, onFocus] = useState(false);
+
+  return (
+    <div className={`main ${focus ? 'is-focus' : ''}`}>
+      <label htmlFor={way}>
+        {label}
+        <input {...rest} onFocus={() => onFocus(true)} onBlur={() => onFocus(false)} />
+      </label>
+    </div>
+  );
+};
 
 export default Input;
