@@ -1,12 +1,28 @@
 @layer components {
   .login-wrapper {
-    @apply m-auto flex flex-col w-[34rem] gap-6;
+    @apply flex flex-col w-[34rem] gap-6;
     
     .welcome {
       @apply flex flex-col items-center text-center gap-6;
 
       p {
         @apply text-wt text-normal;
+      }
+    }
+
+    .form {
+      @apply gap-8 flex flex-col items-center w-full;
+
+      form {
+        @apply w-full flex flex-col gap-8;
+
+        .e-mail, .password {
+          @apply flex w-full bg-n80 rounded-t-lg py-2 px-4; 
+  
+          label {
+            @apply flex flex-col text-sm text-wt w-full;
+          }
+        }
       }
     }
   }

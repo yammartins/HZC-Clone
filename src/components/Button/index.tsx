@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
     'button',
     className,
     `is-${size}`,
-    full && 'w-full',
+    full && 'is-full',
     `is-${appearance}`,
     disabled && 'is-disabled',
     loading && 'is-loading',

@@ -3,7 +3,7 @@ import Button from '~/components/Button';
 import Logo from '../../assets/logo.svg';
 
 const Login: React.FC = () => (
-  <main className="w-screen h-screen">
+  <main className="h-screen w-screen flex items-center justify-center">
     <div className="login-wrapper">
       <div className="welcome">
         <p>Bem-vindo à plataforma da</p>
@@ -14,16 +14,18 @@ const Login: React.FC = () => (
         <form action="">
           <div className="e-mail">
             <label htmlFor="email">
-              <input type="text" name="email" />
+              E-mail
+              <input type="text" className="bg-n80 text-wt text-normal w-full outline-0" />
             </label>
           </div>
           <div className="password">
             <label htmlFor="password">
-              <input type="password" name="password" />
+              Senha
+              <input type="password" className="bg-n80 text-wt text-normal outline-0" />
             </label>
           </div>
         </form>
-        <Button submit full label="Entrar" />
+        <Button submit full size="hg" label="Entrar" />
       </div>
     </div>
   </main>
