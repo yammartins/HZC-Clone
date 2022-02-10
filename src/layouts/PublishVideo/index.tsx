@@ -1,3 +1,4 @@
+import Input from '~/components/Input';
 import Modal from '~/components/Modal';
 
 import { ReactComponent as PhotoIcon } from '../../assets/icons/photo.svg';
@@ -26,12 +27,9 @@ const PublishVideo: React.FC<PublishVideoHandles> = ({
         <p className="text-leg font-bold text-wt mt-[3.5rem] mb-4">Informações do vídeo</p>
         <div className="video-body">
           <div className="video-register">
-            <form action="">
-              <div className="name">
-                <span className="text-sm text-blma">Nome do vídeo</span>
-                <input type="text" className="bg-n80 outline-0 text-wt" />
-              </div>
-              <input type="text" className="bg-n80 rounded-t-lg w-[34rem] h-[7.5rem] outline-0 placeholder:text-grey px-4 py-2 text-inherit text-grey align-top relative pb-20" placeholder="Descrição" />
+            <form action="" className="w-full flex flex-col gap-8">
+              <Input type="text" className="login" label="Nome do vídeo" way="name" />
+              <Input type="text" way="description" className="description" placeholder="Descrição" textarea rows={5} />
             </form>
             <div className="video-info">
               <img src={Minii} alt="" />

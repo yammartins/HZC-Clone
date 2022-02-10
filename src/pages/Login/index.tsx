@@ -13,8 +13,8 @@ const Login: React.FC = () => (
       </div>
       <div className="form">
         <form action="">
-          <Input type="text" className="login" label="E-mail" way="e-mail" input="login" />
-          <Input type="password" className="login" label="Senha" way="password" input="login" />
+          <Input type="text" className="login" label="E-mail" way="e-mail" />
+          <Input type="password" className="login" label="Senha" way="password" />
         </form>
         <Button submit full size="hg" label="Entrar" />
       </div>

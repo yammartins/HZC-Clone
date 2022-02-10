@@ -1,7 +1,8 @@
 import { InputHTMLAttributes } from 'react';
 
-export interface InputHandles extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputHandles extends InputHTMLAttributes<HTMLInputElement & HTMLTextAreaElement> {
   label?: string;
   way: string;
-  input: string;
+  textarea?: boolean;
+  rows?: number;
 }
