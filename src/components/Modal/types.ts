@@ -5,4 +5,5 @@ export interface ModalHandles {
   show: boolean;
   onShow: Dispatch<SetStateAction<boolean>>;
   footer?: boolean;
+  onClick?: () => void;
 }

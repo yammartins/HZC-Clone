@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
-export interface PublishVideoHandles {
+export interface VideoPublishedHandles {
   show: boolean;
   onShow: Dispatch<SetStateAction<boolean>>;
-  onConfirm: Dispatch<SetStateAction<boolean>>;
+  video: string;
 }

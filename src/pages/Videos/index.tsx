@@ -10,6 +10,7 @@ import MiniCards from '~/components/MiniCards';
 import PublishVideo from '~/layouts/PublishVideo';
 import SectionName from '~/layouts/SectionName';
 import UploadVideo from '~/layouts/UploadVideo';
+import VideoPublished from '~/layouts/VideoPublished';
 
 import Video1 from '../../assets/album-1.png';
 import Video2 from '../../assets/album-2.png';
@@ -30,6 +31,7 @@ import Samurai from '../../assets/samurai.jpg';
 const Videos: React.FC = () => {
   const [upload, onUpload] = useState(false);
   const [open, onOpen] = useState(false);
+  const [published, onPublished] = useState(false);
 
   return (
     <>
@@ -100,7 +102,8 @@ const Videos: React.FC = () => {
         </div>
       </main>
       <UploadVideo show={upload} onShow={onUpload} onPublish={onOpen} />
-      <PublishVideo show={open} onShow={onOpen} />
+      <PublishVideo show={open} onShow={onOpen} onConfirm={onPublished} />
+      <VideoPublished video="Gatin G Gorro" show={published} onShow={onPublished} />
     </>
   );
 };

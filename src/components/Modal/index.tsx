@@ -8,6 +8,7 @@ const Modal: React.FC<ModalHandles> = ({
   footer = false,
   onShow,
   children,
+  onClick,
 }) => (
   <div className={`modal-box ${show ? 'is-show' : ''}`}>
     <div className="modal-wrapper">
@@ -27,7 +28,7 @@ const Modal: React.FC<ModalHandles> = ({
             </span>
             <span className="text-leg text-wt">33%</span>
           </div>
-          <Button icon="cloud" label="Publicar vídeo" className="!m-0" />
+          <Button icon="cloud" label="Publicar vídeo" className="!m-0" onClick={onClick} />
         </div>
       )}
     </div>
