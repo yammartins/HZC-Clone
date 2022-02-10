@@ -20,7 +20,13 @@ const PicosArticle: React.FC = () => (
   <div className="flex w-full">
     <Menu />
     <main className="">
-      <SectionName profile={Diomedes} name="Ernst Junger" hasNotifications />
+      <SectionName
+        profile={Diomedes}
+        name="Ernst Junger"
+        hasNotifications
+        button={() => {}}
+        buttonname="Adicionar um novo pico"
+      />
       <div className="pico-box">
         <div className="body-of-article">
           <div className="article-image">

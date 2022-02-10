@@ -39,6 +39,7 @@ const Videos: React.FC = () => {
           button={() => onUpload(true)}
           name="Yammartins"
           profile={Photo}
+          buttonname="Adicionar novo vídeo"
         />
         <div className="content">
           <div className="videos">

@@ -13,6 +13,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
   profile,
   name,
   hasNotifications = false,
+  buttonname,
 }) => {
   const navigate = useNavigate();
 
@@ -42,7 +43,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
               icon="plus"
               size="md"
               appearance="outline"
-              label="Criar um novo pico"
+              label={buttonname}
               onClick={button}
             />
             <div className="h-8 w-[1px] bg-grey mx-8" />
