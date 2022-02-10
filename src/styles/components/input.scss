@@ -8,6 +8,10 @@
       .login {
         @apply text-wt text-normal outline-0 w-full bg-n80;
       }
+
+      .description {
+        @apply outline-0 text-normal pb-[2.75rem] w-full max-w-full bg-n80 placeholder-grey text-grey place-content-start;
+      }
     }
   }
 }
