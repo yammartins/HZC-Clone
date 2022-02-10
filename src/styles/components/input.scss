@@ -1,0 +1,13 @@
+@layer components {
+  .main {
+    @apply flex flex-col bg-n80 rounded-t-lg w-full px-4 py-2;
+
+    label {
+      @apply flex flex-col text-sm text-wt gap-2 w-full;
+
+      .login {
+        @apply text-wt text-normal outline-0 w-full bg-n80;
+      }
+    }
+  }
+}

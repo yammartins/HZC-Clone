@@ -1,4 +1,5 @@
 import Button from '~/components/Button';
+import Input from '~/components/Input';
 
 import Logo from '../../assets/logo.svg';
 
@@ -24,6 +25,9 @@ const Login: React.FC = () => (
               <input type="password" className="bg-n80 text-wt text-normal outline-0" />
             </label>
           </div>
+          <Input type="password" label="Nome do servidor" way="password" input="login" />
+
+          <Input type="text" label="Nome do servidor" way="password" input="login" />
         </form>
         <Button submit full size="hg" label="Entrar" />
       </div>
