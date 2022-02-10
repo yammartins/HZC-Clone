@@ -1,0 +1,13 @@
+@layer components {
+  .login-wrapper {
+    @apply m-auto flex flex-col w-[34rem] gap-6;
+    
+    .welcome {
+      @apply flex flex-col items-center text-center gap-6;
+
+      p {
+        @apply text-wt text-normal;
+      }
+    }
+  }
+}

@@ -10,9 +10,11 @@ import Logo from '../../assets/logo.svg';
 
 const Menu: React.FC = () => (
   <aside className="aside">
-    <div className="aside-logo">
-      <img src={Logo} alt="" />
-    </div>
+    <Link to="/">
+      <div className="aside-logo">
+        <img src={Logo} alt="" />
+      </div>
+    </Link>
     <div className="aside-menu">
       <div className="aside-menu-icons">
         <Link to="/" className="link">
