@@ -12,7 +12,7 @@ const Login: React.FC = () => (
         <p>Utilize seus dados para acessar a sua conta</p>
       </div>
       <div className="form">
-        <form action="">
+        <form action="" onSubmit>
           <Input type="text" className="login" label="E-mail" way="e-mail" />
           <Input type="password" className="login" label="Senha" way="password" />
         </form>
