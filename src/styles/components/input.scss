@@ -28,5 +28,9 @@
         @apply outline-0 text-normal w-full max-w-full bg-n80 placeholder-grey text-wt place-content-start;
       }
     }
+
+    .error {
+      @apply text-red;
+    }
   }
 }
