@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Logo from '~/assets/logo.svg';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
-
-import Logo from '../../assets/logo.svg';
-import api from '../../services';
+import { useAuth } from '~/contexts';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -13,18 +12,25 @@ const Login: React.FC = () => {
   const [text, onText] = useState('');
   const [password, onPassword] = useState('');
 
-  const submit = async (e) => {
-    e.preventDefault();
+  const {
+    user,
+    auth,
+  } = useAuth();
 
-    await api.post('/auth/local', {
-      identifier: text,
-      password,
-    })
-      .then(({ data }) => navigate('/picos'))
-      .catch(({ message }) => onError(message));
+  console.log(user);
 
-    setTimeout(() => onError(false), 3000);
-  };
+  // const submit = async (e) => {
+  //   e.preventDefault();
+
+  //   await api.post('/auth/local', {
+  //     identifier: text,
+  //     password,
+  //   })
+  //     .then(({ data }) => navigate('/picos'))
+  //     .catch(({ message }) => onError(message));
+
+  //   setTimeout(() => onError(false), 3000);
+  // };
 
   return (
     <main className="h-screen w-screen flex items-center justify-center">
@@ -35,7 +41,7 @@ const Login: React.FC = () => {
           <p>Utilize seus dados para acessar a sua conta</p>
         </div>
         <div className="form">
-          <form action="" onSubmit={submit} id="acess">
+          <form action="" onSubmit={(e) => auth(e, text, password)} id="acess">
             <Input
               type="text"
               className="login"

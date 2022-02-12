@@ -1,11 +1,14 @@
-import React from 'react';
-
-import Router from './routes';
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import '~/styles/main.scss';
 
-const App: React.FC = () => <Router />;
+import { AuthProvider } from './contexts';
+import Router from './routes';
+
+const App: React.FC = () => (
+  <AuthProvider>
+    <Router />
+  </AuthProvider>
+);
 
 export default App;
