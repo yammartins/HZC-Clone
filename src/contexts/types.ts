@@ -1,15 +1,30 @@
-import { FormEvent } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
-export type AuthUserHandles = (
-  e: FormEvent<HTMLFormElement>,
-  identifier: string,
+type FormUserHandles = {
   password: string,
-) => Promise<void>;
+  identifier: string,
+};
 
 export interface UserHandles {
-  name: string,
+  blocked: boolean,
+  confirmed: boolean,
+  createdAt: string,
   email: string,
+  id: number,
+  provider: string,
+  updatedAt: string,
+  username: string,
 }
+
+export type AuthFetchHandles = {
+  jwt: string,
+  user: UserHandles,
+};
+
+export type AuthUserHandles = (
+  data: FormUserHandles,
+  onError: Dispatch<SetStateAction<string | null>>
+) => Promise<void>;
 
 export interface AuthHandles {
   user: UserHandles | null,

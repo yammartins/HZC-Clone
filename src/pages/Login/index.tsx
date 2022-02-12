@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Logo from '~/assets/logo.svg';
@@ -8,8 +8,9 @@ import { useAuth } from '~/contexts';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
-  const [error, onError] = useState(false);
+
   const [text, onText] = useState('');
+  const [error, onError] = useState<string | null>(null);
   const [password, onPassword] = useState('');
 
   const {
@@ -17,20 +18,16 @@ const Login: React.FC = () => {
     auth,
   } = useAuth();
 
-  console.log(user);
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  // const submit = async (e) => {
-  //   e.preventDefault();
+    const data = {
+      password,
+      identifier: text,
+    };
 
-  //   await api.post('/auth/local', {
-  //     identifier: text,
-  //     password,
-  //   })
-  //     .then(({ data }) => navigate('/picos'))
-  //     .catch(({ message }) => onError(message));
-
-  //   setTimeout(() => onError(false), 3000);
-  // };
+    await auth(data, onError);
+  };
 
   return (
     <main className="h-screen w-screen flex items-center justify-center">
@@ -40,8 +37,9 @@ const Login: React.FC = () => {
           <img src={Logo} alt="logo do nosso site" className="w-40 h-[10.25rem]" />
           <p>Utilize seus dados para acessar a sua conta</p>
         </div>
+
         <div className="form">
-          <form action="" onSubmit={(e) => auth(e, text, password)} id="acess">
+          <form onSubmit={submit}>
             <Input
               type="text"
               className="login"
@@ -58,7 +56,7 @@ const Login: React.FC = () => {
               value={password}
               onChange={({ target }) => onPassword(target.value)}
             />
-            {error && (<span className="text-red font-semibold text-normal text-center">Por favor, insira um usuário ou senha válidos!</span>)}
+            {error && (<span className="text-red font-semibold text-normal text-center">{error}</span>)}
 
             <Button submit full size="hg" label="Entrar" />
           </form>
