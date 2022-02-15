@@ -1,11 +1,17 @@
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '~/components/Button';
 import { useAuth } from '~/contexts';
 
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
+import { ReactComponent as DolarIcon } from '../../assets/icons/dolar.svg';
+import { ReactComponent as EditIcon } from '../../assets/icons/edit.svg';
 import { ReactComponent as LeftIcon } from '../../assets/icons/left.svg';
+import { ReactComponent as LogoutIcon } from '../../assets/icons/logout.svg';
 import { ReactComponent as NotificationIcon } from '../../assets/icons/notifications.svg';
+import { ReactComponent as ProfileIcon } from '../../assets/icons/profile.svg';
+import Vasnetsov from '../../assets/vasnetsov.jpeg';
 import { SectionNameHandles } from './types';
 
 const SectionName: React.FC<SectionNameHandles> = ({
@@ -20,6 +26,12 @@ const SectionName: React.FC<SectionNameHandles> = ({
   } = useAuth();
 
   const navigate = useNavigate();
+
+  const [open, onOpen] = useState(false);
+
+  const menu = () => {
+    onOpen(! open);
+  };
 
   return (
     <header className="section-channel">
@@ -59,7 +71,32 @@ const SectionName: React.FC<SectionNameHandles> = ({
           </div>
           <span className="font-sans text-normal font-normal text-grey">{user?.username}</span>
           <div className="menu">
-            <ArrowIcon />
+            <ArrowIcon
+              onClick={menu}
+              className="cursor-pointer "
+            />
+            <div className={`user-profile ${open ? 'is-open' : ''}`}>
+              <span>
+                <img src={Vasnetsov} alt="foto do usuário" className="rounded-full w-8 h-8" />
+                {user?.email}
+              </span>
+              <Link to="/">
+                <UserIcon />
+                Ver perfil
+              </Link>
+              <Link to="/">
+                <ProfileIcon />
+                Editar dados
+              </Link>
+              <Link to="/">
+                <DolarIcon />
+                Tornar-se premium
+              </Link>
+              <Link to="/">
+                <LogoutIcon />
+                Desconectar-se
+              </Link>
+            </div>
           </div>
         </div>
         <div className="divider" />
