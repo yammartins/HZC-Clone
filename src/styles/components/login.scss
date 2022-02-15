@@ -10,18 +10,15 @@
       }
     }
 
-    .form {
-      @apply gap-8 flex flex-col items-center w-full;
 
-      form {
-        @apply w-full flex flex-col gap-8;
+    form {
+      @apply  gap-8 flex flex-col items-center w-full relative;
 
-        .e-mail, .password {
-          @apply flex w-full bg-n80 rounded-t-lg py-2 px-4; 
-  
-          label {
-            @apply flex flex-col text-sm text-wt w-full;
-          }
+      .e-mail, .password {
+        @apply flex w-full bg-n80 rounded-t-lg py-2 px-4; 
+
+        label {
+          @apply flex flex-col text-sm text-wt w-full;
         }
       }
     }
