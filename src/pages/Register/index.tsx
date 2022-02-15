@@ -13,21 +13,36 @@ const Register: React.FC = () => {
   const [nickname, onNickname] = useState('');
   const [error, onError] = useState<string | null>(null);
   const [password, onPassword] = useState('');
+  const [confirmPassword, onConfirmPassword] = useState('');
 
   const {
-    user,
-    auth,
+    create,
   } = useAuth();
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (! text || ! nickname || ! password || ! confirmPassword || password !== confirmPassword) {
+      if (! text || ! nickname || ! password || ! confirmPassword) {
+        onError('Preencha os campos');
+
+        return;
+      }
+
+      onError('As senhas precisam ser iguais.');
+
+      return;
+    }
+
     const data = {
+      email: text,
+      username: nickname,
       password,
-      identifier: text,
     };
 
-    await auth(data, onError);
+    await create(data, onError);
+
+    navigate('/');
   };
 
   return (
@@ -42,7 +57,7 @@ const Register: React.FC = () => {
         <div className="form">
           <form onSubmit={submit}>
             <Input
-              type="text"
+              type="email"
               className="login"
               label="E-mail"
               way="e-mail"
@@ -65,11 +80,21 @@ const Register: React.FC = () => {
               value={password}
               onChange={({ target }) => onPassword(target.value)}
             />
-            <Link to="/login">
-              <span className="to-register">Já possui conta? Acesse por aqui</span>
+            <Input
+              type="password"
+              className="login"
+              label="Confirme sua senha"
+              way="password"
+              value={confirmPassword}
+              onChange={({ target }) => onConfirmPassword(target.value)}
+            />
+            <Link to="/" className="to-register">
+              Já possui conta? Acesse por aqui
             </Link>
 
             <Button submit full size="hg" label="Registrar" />
+
+            {error && <span className="text-red font-semibold text-normal text-center">{error}</span>}
           </form>
         </div>
       </div>

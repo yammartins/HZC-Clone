@@ -14,7 +14,6 @@ const Login: React.FC = () => {
   const [password, onPassword] = useState('');
 
   const {
-    user,
     auth,
   } = useAuth();
 
@@ -27,6 +26,8 @@ const Login: React.FC = () => {
     };
 
     await auth(data, onError);
+
+    navigate('/');
   };
 
   return (
@@ -54,10 +55,12 @@ const Login: React.FC = () => {
             value={password}
             onChange={({ target }) => onPassword(target.value)}
           />
-          <Link to="/register">
-            <span className="to-register">Não possui conta? Registre-se!</span>
+
+          <Link to="/register" className="to-register">
+            Não possui conta? Registre-se!
           </Link>
-          {error && (<span className="text-red font-semibold text-normal text-center">{error}</span>)}
+
+          {error && <span className="text-red font-semibold text-normal text-center">{error}</span>}
 
           <Button submit full size="hg" label="Entrar" />
         </form>

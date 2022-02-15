@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import Button from '~/components/Button';
+import { useAuth } from '~/contexts';
 
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
 import { ReactComponent as LeftIcon } from '../../assets/icons/left.svg';
@@ -11,10 +12,13 @@ const SectionName: React.FC<SectionNameHandles> = ({
   server,
   button,
   profile,
-  name,
   hasNotifications = false,
   buttonname,
 }) => {
+  const {
+    user,
+  } = useAuth();
+
   const navigate = useNavigate();
 
   return (
@@ -53,7 +57,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
           <div className="picture">
             <img src={profile} alt="foto do usuário" />
           </div>
-          <span className="font-sans text-normal font-normal text-grey">{name}</span>
+          <span className="font-sans text-normal font-normal text-grey">{user?.username}</span>
           <div className="menu">
             <ArrowIcon />
           </div>

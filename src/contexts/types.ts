@@ -23,10 +23,23 @@ export type AuthFetchHandles = {
 
 export type AuthUserHandles = (
   data: FormUserHandles,
+  onError?: Dispatch<SetStateAction<string | null>>
+) => Promise<void>;
+
+export type CreateUserHandles = (
+  data: {
+    email: string,
+    username: string,
+    password: string
+  },
   onError: Dispatch<SetStateAction<string | null>>
 ) => Promise<void>;
 
 export interface AuthHandles {
   user: UserHandles | null,
   auth: AuthUserHandles,
+  fetch: (data?: AuthFetchHandles) => void,
+  logout: () => void,
+  create: CreateUserHandles,
+  authenticated: boolean,
 }
