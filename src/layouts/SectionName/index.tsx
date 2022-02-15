@@ -5,12 +5,12 @@ import Button from '~/components/Button';
 import { useAuth } from '~/contexts';
 
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
-import { ReactComponent as DolarIcon } from '../../assets/icons/dolar.svg';
+import { ReactComponent as UserIcon } from '../../assets/icons/datauser.svg';
 import { ReactComponent as EditIcon } from '../../assets/icons/edit.svg';
 import { ReactComponent as LeftIcon } from '../../assets/icons/left.svg';
 import { ReactComponent as LogoutIcon } from '../../assets/icons/logout.svg';
 import { ReactComponent as NotificationIcon } from '../../assets/icons/notifications.svg';
-import { ReactComponent as ProfileIcon } from '../../assets/icons/profile.svg';
+import { ReactComponent as PriceIcon } from '../../assets/icons/price.svg';
 import Vasnetsov from '../../assets/vasnetsov.jpeg';
 import { SectionNameHandles } from './types';
 
@@ -76,23 +76,23 @@ const SectionName: React.FC<SectionNameHandles> = ({
               className="cursor-pointer "
             />
             <div className={`user-profile ${open ? 'is-open' : ''}`}>
-              <span>
+              <span className="flex gap-2 text-wt text-leg p-3">
                 <img src={Vasnetsov} alt="foto do usuário" className="rounded-full w-8 h-8" />
                 {user?.email}
               </span>
-              <Link to="/">
+              <Link to="/" className="link">
                 <UserIcon />
                 Ver perfil
               </Link>
-              <Link to="/">
-                <ProfileIcon />
+              <Link to="/" className="link">
+                <EditIcon />
                 Editar dados
               </Link>
-              <Link to="/">
-                <DolarIcon />
+              <Link to="/" className="link">
+                <PriceIcon />
                 Tornar-se premium
               </Link>
-              <Link to="/">
+              <Link to="/" className="link">
                 <LogoutIcon />
                 Desconectar-se
               </Link>

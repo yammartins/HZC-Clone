@@ -13,12 +13,20 @@
         @apply h-8 w-[1px] bg-grey mx-8; 
       }
 
+      .menu {
+        @apply relative;
+
+        .user-profile {
+          @apply absolute p-4 rounded-lg bg-n90 flex flex-col -left-40 -top-4 min-w-[15rem];
+
+          .link {
+            @apply flex gap-2 text-wt text-leg p-3;
+          }
+        }
+      }
+
       .notification {
         @apply flex relative items-center;
-
-        // &::before {
-        //   @apply content-[''] w-2 h-2 absolute rounded-full flex-shrink bg-gr left-[1rem] top-[1.4rem]; 
-        // }
       }
     }
   }
