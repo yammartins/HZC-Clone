@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Logo from '~/assets/logo.svg';
 import Button from '~/components/Button';
@@ -10,6 +10,7 @@ const Register: React.FC = () => {
   const navigate = useNavigate();
 
   const [text, onText] = useState('');
+  const [nickname, onNickname] = useState('');
   const [error, onError] = useState<string | null>(null);
   const [password, onPassword] = useState('');
 
@@ -33,9 +34,9 @@ const Register: React.FC = () => {
     <main className="h-screen w-screen flex items-center justify-center">
       <div className="login-wrapper">
         <div className="welcome">
-          <p>Bem-vindo à plataforma da</p>
-          <img src={Logo} alt="logo do nosso site" className="w-40 h-[10.25rem]" />
-          <p>Utilize seus dados para acessar a sua conta</p>
+          <img src={Logo} alt="logo do nosso site" className="w-40 h-[12rem]" />
+          <p>Bem-vindo à nossa plataforma!</p>
+          <p>Se é a sua primeira vez em nosso site, registre-se:</p>
         </div>
 
         <div className="form">
@@ -49,6 +50,14 @@ const Register: React.FC = () => {
               onChange={({ target }) => onText(target.value)}
             />
             <Input
+              type="text"
+              className="login"
+              label="Apelido"
+              way="user"
+              value={nickname}
+              onChange={({ target }) => onNickname(target.value)}
+            />
+            <Input
               type="password"
               className="login"
               label="Senha"
@@ -56,9 +65,11 @@ const Register: React.FC = () => {
               value={password}
               onChange={({ target }) => onPassword(target.value)}
             />
-            {error && (<span className="text-red font-semibold text-normal text-center">{error}</span>)}
+            <Link to="/login">
+              <span className="to-register">Já possui conta? Acesse por aqui</span>
+            </Link>
 
-            <Button submit full size="hg" label="Entrar" />
+            <Button submit full size="hg" label="Registrar" />
           </form>
         </div>
       </div>

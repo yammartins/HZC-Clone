@@ -9,6 +9,7 @@ import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Picos from './pages/Picos';
 import PicosArticle from './pages/PicosArticle';
+import Register from './pages/Register';
 import Videos from './pages/Videos';
 import VideosArticle from './pages/VideosArticle';
 
@@ -17,6 +18,8 @@ const Router: React.FC = () => (
     <Routes>
 
       <Route path="login" element={<Login />} />
+
+      <Route path="register" element={<Register />} />
 
       <Route path="/" element={<App />}>
         <Route index element={<Homepage />} />

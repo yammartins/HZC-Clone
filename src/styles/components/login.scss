@@ -21,6 +21,14 @@
           @apply flex flex-col text-sm text-wt w-full;
         }
       }
+
+      .to-register {
+        @apply absolute bottom-[6rem] right-0 text-blma text-sm transition-all duration-300;
+
+        &:hover {
+          @apply text-blho transition-all duration-300;
+        }
+      }
     }
   }
 }
