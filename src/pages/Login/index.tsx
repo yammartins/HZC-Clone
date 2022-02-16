@@ -62,7 +62,7 @@ const Login: React.FC = () => {
 
           {error && <span className="text-red font-semibold text-normal text-center">{error}</span>}
 
-          <Button submit full size="hg" label="Entrar" />
+          <Button submit full size="hg" label="Entrar" className="mt-2" />
         </form>
       </div>
     </main>

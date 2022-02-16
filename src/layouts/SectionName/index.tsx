@@ -73,13 +73,19 @@ const SectionName: React.FC<SectionNameHandles> = ({
           <div className="menu">
             <ArrowIcon
               onClick={menu}
-              className="cursor-pointer "
+              className="pointer "
             />
             <div className={`user-profile ${open ? 'is-open' : ''}`}>
-              <span className="flex gap-2 text-wt text-leg p-3">
-                <img src={Vasnetsov} alt="foto do usuário" className="rounded-full w-8 h-8" />
-                {user?.email}
-              </span>
+              <div className="menu-header">
+                <span className="flex gap-2 text-wt text-leg p-3">
+                  <img src={Vasnetsov} alt="foto do usuário" className="rounded-full w-7 h-7 flex-shrink" />
+                  {user?.email}
+                </span>
+                <ArrowIcon
+                  onClick={menu}
+                  className="pointer"
+                />
+              </div>
               <Link to="/" className="link">
                 <UserIcon />
                 Ver perfil
@@ -92,6 +98,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
                 <PriceIcon />
                 Tornar-se premium
               </Link>
+              <div className="w-[95%] h-[2px] bg-grey my-2 self-center" />
               <Link to="/" className="link">
                 <LogoutIcon />
                 Desconectar-se

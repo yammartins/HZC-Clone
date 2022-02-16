@@ -17,12 +17,28 @@
         @apply relative;
 
         .user-profile {
-          @apply absolute p-4 rounded-lg bg-n90 flex flex-col -left-40 -top-4 min-w-[15rem];
+          @apply absolute p-4 rounded-lg bg-n90 flex flex-col -left-[17.5rem] -top-12 min-w-[20rem] z-10 pointer-events-none opacity-0 transition-all duration-300;
+
+          .menu-header {
+            @apply flex justify-between items-center;
+          }
 
           .link {
-            @apply flex gap-2 text-wt text-leg p-3;
+            @apply flex gap-2 text-wt text-leg p-3 items-center;
+
+            &:hover {
+              @apply font-bold bg-n80 rounded-lg;
+            }
+          }
+
+          &.is-open {
+            @apply pointer-events-auto opacity-100 -top-[1.8rem] transition-all duration-300;
           }
         }
+      }
+
+      .pointer:hover {
+        @apply bg-n80 rounded-full font-bold;
       }
 
       .notification {

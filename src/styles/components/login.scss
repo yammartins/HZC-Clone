@@ -23,7 +23,15 @@
       }
 
       .to-register {
-        @apply absolute bottom-[6rem] right-0 text-blma text-sm transition-all duration-300;
+        @apply absolute bottom-[4.5rem] right-0 text-blma text-sm transition-all duration-300;
+
+        &:hover {
+          @apply text-blho transition-all duration-300;
+        }
+      }
+
+      .to-acess {
+        @apply absolute bottom-16 right-0 text-blma text-sm transition-all duration-300;
 
         &:hover {
           @apply text-blho transition-all duration-300;

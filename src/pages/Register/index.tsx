@@ -88,7 +88,7 @@ const Register: React.FC = () => {
               value={confirmPassword}
               onChange={({ target }) => onConfirmPassword(target.value)}
             />
-            <Link to="/" className="to-register">
+            <Link to="/" className="to-acess">
               Já possui conta? Acesse por aqui
             </Link>
 
