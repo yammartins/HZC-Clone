@@ -99,10 +99,10 @@ const SectionName: React.FC<SectionNameHandles> = ({
                 Tornar-se premium
               </Link>
               <div className="w-[95%] h-[2px] bg-grey my-2 self-center" />
-              <Link to="/" className="link">
+              <div className="logout">
                 <LogoutIcon />
                 Desconectar-se
-              </Link>
+              </div>
             </div>
           </div>
         </div>

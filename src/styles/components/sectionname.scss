@@ -24,10 +24,34 @@
           }
 
           .link {
-            @apply flex gap-2 text-wt text-leg p-3 items-center;
+            @apply flex gap-2 text-sewit text-leg p-3 items-center transition-all duration-300;
 
             &:hover {
-              @apply font-bold bg-n80 rounded-lg;
+              @apply font-bold bg-n80 rounded-lg transition-all duration-300;
+            }
+
+            svg {
+              @apply fill-sewit/60;
+
+              &:hover {
+                @apply fill-wt;
+              }
+            }
+          }
+
+          .logout {
+            @apply flex gap-2 text-wt text-leg p-3 items-center cursor-pointer transition-all duration-300;
+
+            &:hover {
+              @apply font-bold bg-n80 rounded-lg text-red/80 transition-all duration-300;
+            }
+
+            svg {
+              @apply fill-wt/50;
+
+              &:hover {
+                @apply fill-red/80;
+              }
             }
           }
 
@@ -38,7 +62,7 @@
       }
 
       .pointer:hover {
-        @apply bg-n80 rounded-full font-bold;
+        @apply bg-n80 rounded-full font-bold transition-all duration-300;
       }
 
       .notification {
