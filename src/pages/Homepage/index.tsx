@@ -71,6 +71,12 @@ const Homepage: React.FC = () => (
               pagination={{
                 clickable: true,
               }}
+              breakpoints={{
+                1310: {
+                  spaceBetween: 32,
+                  slidesPerView: 4,
+                },
+              }}
             >
               <SwiperSlide><Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" /></SwiperSlide>
               <SwiperSlide><Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" /></SwiperSlide>

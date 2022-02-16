@@ -23,6 +23,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
 }) => {
   const {
     user,
+    logout,
   } = useAuth();
 
   const navigate = useNavigate();
@@ -99,7 +100,11 @@ const SectionName: React.FC<SectionNameHandles> = ({
                 Tornar-se premium
               </Link>
               <div className="w-[95%] h-[2px] bg-grey my-2 self-center" />
-              <div className="logout">
+              <div
+                role="presentation"
+                onClick={logout}
+                className="logout"
+              >
                 <LogoutIcon />
                 Desconectar-se
               </div>

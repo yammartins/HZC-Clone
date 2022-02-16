@@ -10,7 +10,6 @@
       }
     }
 
-
     form {
       @apply  gap-8 flex flex-col items-center w-full relative;
 
@@ -37,6 +36,17 @@
           @apply text-blho transition-all duration-300;
         }
       }
+    }
+  }
+  @media screen and (max-width: 580px) {
+    .login-wrapper {
+      @apply w-[30rem]
+    }
+  }
+
+  @media screen and (max-width: 520px){
+    .login-wrapper {
+      @apply w-[26rem]
     }
   }
 }
