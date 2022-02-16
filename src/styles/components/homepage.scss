@@ -22,7 +22,7 @@
           }
           
           .footer {
-            @apply flex p-4 justify-between items-center rounded-b-2xl bg-n80 w-full min-h-[10rem] h-full; 
+            @apply flex p-4 justify-between rounded-b-2xl bg-n80 w-full min-h-[10rem] h-full; 
   
             .description {
               @apply grid gap-2 text-wt;
@@ -40,6 +40,10 @@
                 }
               }
             }
+
+            .buttom-card {
+              @apply flex items-center;
+            }
           }
         }
   
@@ -51,6 +55,31 @@
     
     &::-webkit-scrollbar {
       @apply overflow-hidden;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    .wrapper-featured {
+      @apply flex flex-col;
+    }
+  }
+
+  @media screen and (max-width: 810px) {
+    .footer {
+      @apply flex flex-col gap-4;
+
+      .buttom-card {
+        @apply m-auto mb-8;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .footer {
+
+      .buttom-card {
+        @apply mb-16;
+      }
     }
   }
 }

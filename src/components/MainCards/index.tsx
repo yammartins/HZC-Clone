@@ -55,7 +55,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
 
         </div>
       </div>
-      <div className="flex">
+      <div className="buttom-card">
         <a href={way}>
           <Button icon={icon} label={button} size="md" submit />
         </a>

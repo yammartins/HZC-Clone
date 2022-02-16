@@ -44,7 +44,7 @@ const Homepage: React.FC = () => (
           <div className="wrapper-featured">
             <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" icon="play" button="Assistir agora" type="video" info="Vídeo em destaque" />
             <div className="most-recent">
-              <div className="flex gap-2">
+              <div className="flex gap-2 items-center justify-between">
                 <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
                 <a href="#morevideos" className="font-sans text-smbut text-blma">
                   Ver todos
@@ -67,7 +67,7 @@ const Homepage: React.FC = () => (
             <Swiper
               modules={[Pagination]}
               spaceBetween={32}
-              slidesPerView={4}
+              slidesPerView={1}
               pagination={{
                 clickable: true,
               }}
@@ -75,6 +75,14 @@ const Homepage: React.FC = () => (
                 1310: {
                   spaceBetween: 32,
                   slidesPerView: 4,
+                },
+                1050: {
+                  spaceBetween: 24,
+                  slidesPerView: 3,
+                },
+                900: {
+                  spaceBetween: 16,
+                  slidesPerView: 2,
                 },
               }}
             >
@@ -93,7 +101,7 @@ const Homepage: React.FC = () => (
         <div className="arts">
           <div className="wrapper-featured">
             <div className="most-recent">
-              <div className="flex gap-2">
+              <div className="flex gap-2 items-center justify-between">
                 <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
                 <a href="#morevideos" className="font-sans text-leg text-blma">
                   Ver todos
@@ -118,9 +126,23 @@ const Homepage: React.FC = () => (
             <Swiper
               modules={[Pagination]}
               spaceBetween={32}
-              slidesPerView={4}
+              slidesPerView={1}
               pagination={{
                 clickable: true,
+              }}
+              breakpoints={{
+                1310: {
+                  spaceBetween: 32,
+                  slidesPerView: 4,
+                },
+                1050: {
+                  spaceBetween: 24,
+                  slidesPerView: 3,
+                },
+                900: {
+                  spaceBetween: 16,
+                  slidesPerView: 2,
+                },
               }}
             >
               <SwiperSlide><Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} /></SwiperSlide>
