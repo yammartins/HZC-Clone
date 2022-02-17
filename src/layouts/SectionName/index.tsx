@@ -71,7 +71,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
           <div className="picture">
             <img src={profile} alt="foto do usuário" />
           </div>
-          <span className="font-sans text-normal font-normal text-grey">{user?.username}</span>
+          <span className="profile-data-name">{user?.username}</span>
           <div className="menu">
             <ArrowIcon
               onClick={menu}

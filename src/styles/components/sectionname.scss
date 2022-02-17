@@ -1,12 +1,16 @@
 @layer components {
   .section-channel {
-    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-lg items-center w-[calc(100%-204px)] ml-[12.75rem] fixed z-[2];
+    @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-lg items-center w-[calc(100%-204px)] ml-[12.75rem] fixed z-[2] transition-all duration-300;
     
     .profile {
       @apply flex; 
 
       &-data {
         @apply gap-2 items-center flex;
+
+        &-name {
+          @apply font-sans text-normal font-normal text-grey;
+        }
       }
 
       .divider {
@@ -79,8 +83,31 @@
 
       .notification {
         @apply flex relative items-center;
+      }    
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    .section-channel {
+      @apply relative w-screen ml-0 bg-n80 transition-all duration-300;
+
+      .profile {
+        
+        .profile-data {
+
+          &-name, .picture, .menu {
+            @apply opacity-0 pointer-events-none;
+          }
+
+          .divider {
+            @apply opacity-0 pointer-events-none;
+          }
+        }
+
+        .divider {
+          @apply opacity-0 pointer-events-none;
+        }
       }
-      
     }
   }
 }
