@@ -61,13 +61,26 @@
         }
       }
 
-      .pointer:hover {
-        @apply bg-n80 rounded-full font-bold transition-all duration-300;
+      .pointer {
+        @apply text-wt;
+
+        &:hover {
+          @apply bg-n80 rounded-full font-bold transition-all duration-300;
+        }
+      }
+
+      .is-closed {
+        @apply relative top-0 left-0 transition-all duration-300;
+      }
+
+      .open {
+        @apply relative top-4 transition-all duration-300;
       }
 
       .notification {
         @apply flex relative items-center;
       }
+      
     }
   }
 }

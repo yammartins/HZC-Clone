@@ -5,6 +5,7 @@ import Button from '~/components/Button';
 import { useAuth } from '~/contexts';
 
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/closed.svg';
 import { ReactComponent as UserIcon } from '../../assets/icons/datauser.svg';
 import { ReactComponent as EditIcon } from '../../assets/icons/edit.svg';
 import { ReactComponent as LeftIcon } from '../../assets/icons/left.svg';
@@ -74,7 +75,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
           <div className="menu">
             <ArrowIcon
               onClick={menu}
-              className="pointer "
+              className={`pointer ${! open ? 'is-closed' : 'open'}`}
             />
             <div className={`user-profile ${open ? 'is-open' : ''}`}>
               <div className="menu-header">
@@ -82,7 +83,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
                   <img src={Vasnetsov} alt="foto do usuário" className="rounded-full w-7 h-7 flex-shrink" />
                   {user?.email}
                 </span>
-                <ArrowIcon
+                <CloseIcon
                   onClick={menu}
                   className="pointer"
                 />
