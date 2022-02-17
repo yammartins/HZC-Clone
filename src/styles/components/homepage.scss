@@ -7,7 +7,7 @@
       @apply gap-6 flex flex-col h-full;
   
       .wrapper-featured {
-        @apply gap-8 flex relative w-full;
+        @apply gap-8 flex relative w-full transition-all duration-300;
   
         .featured-arts,
         .featured-video {
@@ -60,16 +60,16 @@
 
   @media screen and (max-width: 1080px) {
     .wrapper-featured {
-      @apply flex flex-col;
+      @apply flex flex-col transition-all duration-300;
     }
   }
 
   @media screen and (max-width: 810px) {
     .footer {
-      @apply flex flex-col gap-4;
+      @apply flex flex-col gap-4 transition-all duration-300;
 
       .buttom-card {
-        @apply m-auto mb-8;
+        @apply m-auto mb-8 transition-all duration-300;
       }
     }
   }
@@ -78,7 +78,7 @@
     .footer {
 
       .buttom-card {
-        @apply mb-16;
+        @apply mb-16 transition-all duration-300;
       }
     }
   }

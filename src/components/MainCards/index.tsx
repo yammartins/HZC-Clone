@@ -27,7 +27,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
       <div className="description">
         <h3 className="font-sans font-bold text-h4">{info}</h3>
 
-        <h1 className="font-sans font-bold text-h3">{title}</h1>
+        <h1 className="font-sans font-bold text-h3 truncate">{title}</h1>
 
         <div className="about-and-info">
           <div className="author-name">

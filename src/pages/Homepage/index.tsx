@@ -35,7 +35,7 @@ import SaoJanuario from '../../assets/saojanuario.jpeg';
 import Shirt2 from '../../assets/shirt-2.png';
 
 const Homepage: React.FC = () => (
-  <div className="flex w-full">
+  <div className="flex-col sm:flex w-full">
     <Menu />
     <main className="flex flex-col w-full scroll-smooth">
       <SectionName server="Início" profile={Diomedes} hasNotifications />
