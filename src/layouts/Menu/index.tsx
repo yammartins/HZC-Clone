@@ -38,50 +38,52 @@ const Menu: React.FC = () => {
       </Link>
 
       <div className={`aside-menu ${hamb ? 'is-show' : ''}`}>
-        <IconCloseHamb
-          className={`menu-pointer-closed ${! hamb ? '' : 'open'}`}
-          onClick={menu}
-        />
-        <div className="aside-menu-icons">
-          <Link to="/" className="link">
-            <IconHouse />
-            Início
-          </Link>
-        </div>
-        <div className="aside-menu-icons">
-          <Link to="/videos" className="link">
-            <IconVideo />
-            Vídeos
-          </Link>
+        <div className="">
+          <IconCloseHamb
+            className={`menu-pointer-closed ${! hamb ? '' : 'open'}`}
+            onClick={menu}
+          />
+          <div className="aside-menu-icons">
+            <Link to="/" className="link">
+              <IconHouse />
+              Início
+            </Link>
+          </div>
+          <div className="aside-menu-icons">
+            <Link to="/videos" className="link">
+              <IconVideo />
+              Vídeos
+            </Link>
 
-        </div>
-        <div className="aside-menu-icons">
-          <Link to="/picos" className="link">
-            <IconPin />
-            Picos
-          </Link>
+          </div>
+          <div className="aside-menu-icons">
+            <Link to="/picos" className="link">
+              <IconPin />
+              Picos
+            </Link>
 
-        </div>
-        <div className="aside-menu-icons">
-          <Link to="/" className="link">
-            <IconUser />
-            Integrantes
-          </Link>
+          </div>
+          <div className="aside-menu-icons">
+            <Link to="/" className="link">
+              <IconUser />
+              Integrantes
+            </Link>
 
-        </div>
-        <div className="aside-menu-icons">
-          <Link to="/" className="link">
-            <IconShirts />
-            Camisetas
-          </Link>
+          </div>
+          <div className="aside-menu-icons">
+            <Link to="/" className="link">
+              <IconShirts />
+              Camisetas
+            </Link>
 
-        </div>
-        <div className="aside-menu-icons">
-          <Link to="/" className="link">
-            <IconImage />
-            Pinturas
-          </Link>
+          </div>
+          <div className="aside-menu-icons">
+            <Link to="/" className="link">
+              <IconImage />
+              Pinturas
+            </Link>
 
+          </div>
         </div>
         <div
           role="presentation"
