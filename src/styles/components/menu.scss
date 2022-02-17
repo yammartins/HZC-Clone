@@ -11,7 +11,7 @@
     }
 
     &-menu {
-    @apply pr-[2.8rem] fixed;
+    @apply pr-[2.8rem] fixed transition-all duration-300;
     
       &-icons {
         @apply items-center py-4 pl-6 text-grey relative flex;

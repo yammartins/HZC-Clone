@@ -2,6 +2,10 @@
   .section-channel {
     @apply bg-n90 px-[3.625rem] py-6 flex justify-between drop-shadow-lg items-center w-[calc(100%-204px)] ml-[12.75rem] fixed z-[2] transition-all duration-300;
     
+    .channel-text-title {
+      @apply font-bold font-sans text-h3 text-wt mr-auto;
+    }
+
     .profile {
       @apply flex; 
 
@@ -83,15 +87,20 @@
 
       .notification {
         @apply flex relative items-center;
+
+        &-span {
+         @apply w-2 h-2 absolute rounded-full flex-shrink bg-gr left-4 top-[1.4rem];
+        }
       }    
     }
   }
 
   @media screen and (max-width: 630px) {
     .section-channel {
-      @apply relative w-screen ml-0 bg-n80 transition-all duration-300;
+      @apply relative w-screen ml-0 bg-n90 transition-all duration-300 drop-shadow-none px-[1.625rem];
 
       .profile {
+        @apply relative;
         
         .profile-data {
 
@@ -105,6 +114,10 @@
         }
 
         .divider {
+          @apply opacity-0 pointer-events-none;
+        }
+
+        .notification {
           @apply opacity-0 pointer-events-none;
         }
       }

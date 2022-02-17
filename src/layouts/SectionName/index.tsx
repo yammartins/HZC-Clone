@@ -39,7 +39,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
     <header className="section-channel">
       <div className="channel-text">
         {server
-          ? (<h2 className="font-bold font-sans text-h3 text-wt mr-auto">{server}</h2>)
+          ? (<h2 className="channel-text-title">{server}</h2>)
           : (
             <span
               className="font-normal font-sans text-normal text-wt mr-auto gap-2 flex items-center cursor-pointer"
@@ -115,7 +115,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
         <div className="divider" />
         <div className="notification">
           <NotificationIcon />
-          {hasNotifications === true && (<div className="w-2 h-2 absolute rounded-full flex-shrink bg-gr left-4 top-[1.4rem]" />)}
+          {hasNotifications === true && (<div className="notification-span" />)}
         </div>
       </div>
     </header>

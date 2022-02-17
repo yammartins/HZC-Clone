@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useAuth } from '~/contexts';
+
 import { ReactComponent as IconShirts } from '../../assets/icons/accessibility.svg';
 import { ReactComponent as IconCloseHamb } from '../../assets/icons/hamb-closed.svg';
 import { ReactComponent as IconHamb } from '../../assets/icons/hamb.svg';
 import { ReactComponent as IconHouse } from '../../assets/icons/house.svg';
+import { ReactComponent as LogoutIcon } from '../../assets/icons/logout.svg';
 import { ReactComponent as IconPin } from '../../assets/icons/pin.svg';
 import { ReactComponent as IconUser } from '../../assets/icons/user.svg';
 import { ReactComponent as IconVideo } from '../../assets/icons/videocam.svg';
@@ -17,6 +20,10 @@ const Menu: React.FC = () => {
   const menu = () => {
     onHamb(! hamb);
   };
+
+  const {
+    logout,
+  } = useAuth();
 
   return (
     <aside className="aside">
@@ -76,7 +83,14 @@ const Menu: React.FC = () => {
           </Link>
 
         </div>
-
+        <div
+          role="presentation"
+          onClick={logout}
+          className="logout"
+        >
+          <LogoutIcon />
+          Desconectar-se
+        </div>
       </div>
     </aside>
   );
