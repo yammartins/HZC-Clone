@@ -18,15 +18,23 @@
 
         .link {
           @apply flex font-sans font-normal text-normal gap-4;
-        }  
-        
-        &:hover {
-          @apply transition-colors duration-300 text-wt;
-         
-          &::before {
-            @apply content-[''] transition-all duration-300 h-full w-2 bg-wt absolute left-0 rounded-sm; 
+
+          &:hover {
+            @apply transition-colors duration-300 text-wt;
+           
+            &::before {
+              @apply content-[''] transition-all duration-300 h-full w-2 bg-wt absolute left-0 top-0 rounded-sm; 
+            }
           }
-        }   
+          
+          &::before {
+            @apply content-[''] transition-all duration-300 h-0 w-2 bg-wt absolute left-0 rounded-sm bottom-0; 
+          }
+        }  
+      }
+
+      .logout {
+        @apply pointer-events-none opacity-0;
       }
     }
 
@@ -55,26 +63,26 @@
         }
 
         .logout {
-          @apply flex gap-2 relative text-grey py-4 pr-4 pl-6 items-center cursor-pointer transition-all duration-300;
+          @apply flex gap-2 relative text-grey py-4 pr-4 pl-6 items-center cursor-pointer transition-all duration-300 pointer-events-auto opacity-100;
 
           &:hover {
             @apply font-bold rounded-lg text-red/80 transition-all duration-300;
 
             &::before {
-              @apply content-[''] transition-all duration-300 h-[0.125rem] w-[14.875rem] -right-4 bg-red absolute bottom-0 rounded-sm; 
+              @apply content-[''] transition-all duration-500 h-[0.125rem] w-[14.875rem] -right-8 bg-red absolute bottom-0 rounded-sm; 
             }
 
             &::after {
-              @apply content-[''] transition-all duration-300 h-[0.125rem] w-[14.875rem] left-0 bg-red absolute top-0 rounded-sm; 
+              @apply content-[''] transition-all duration-500 h-[0.125rem] w-[14.875rem] -left-8 bg-red absolute bottom-0 rounded-sm; 
             }
           }
 
           &::before {
-            @apply content-[''] transition-all duration-300 h-[0.125rem] w-0 left-0 bg-red absolute bottom-0 rounded-sm; 
+            @apply content-[''] transition-all duration-500 h-[0.125rem] w-0 left-0 bg-red absolute bottom-0 rounded-sm; 
           }
 
           &::after {
-            @apply content-[''] transition-all duration-300 h-[0.125rem] w-0 -right-10 bg-red absolute top-0 rounded-sm; 
+            @apply content-[''] transition-all duration-500 h-[0.125rem] w-0 -right-10 bg-red absolute bottom-0 rounded-sm; 
           }
         }
       }
