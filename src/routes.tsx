@@ -4,7 +4,6 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { useAuth } from '~/contexts';
 
 import App from './layouts/App';
-import Test from './layouts/Test';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Picos from './pages/Picos';
@@ -43,8 +42,6 @@ const Router: React.FC = () => {
           ) : (
             <Route path="/" element={<App />}>
               <Route index element={<Homepage />} />
-
-              <Route path="teste" element={<Test />} />
 
               <Route path="picos" element={<Picos />} />
 
