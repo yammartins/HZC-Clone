@@ -3,10 +3,12 @@ import { NotificationHandles } from './types';
 
 const Notification: React.FC<NotificationHandles> = ({
   className,
-  hasNotifications,
+  hasNotifications = false,
+  menu = false,
+  sectionName = false,
   ...rest
 }) => (
-  <div {...rest} className={`notification ${className || ''}`}>
+  <div {...rest} className={`notification ${className || ''} ${menu && 'menu-notification'} ${sectionName && 'menu-section'}`}>
     <NotificationIcon />
     {hasNotifications && (<div className="notification-span" />)}
   </div>

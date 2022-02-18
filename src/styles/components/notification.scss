@@ -1,0 +1,9 @@
+@layer components {
+  .notification {
+    @apply flex relative items-center;
+
+    &-span {
+     @apply w-2 h-2 absolute rounded-full flex-shrink bg-gr left-4 top-[1.4rem];
+    }
+  }  
+}
