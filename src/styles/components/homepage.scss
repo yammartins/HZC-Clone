@@ -87,5 +87,12 @@
     .content {
       @apply px-4 py-4 transition-all duration-300;
     }
+
+    .footer {
+
+      .buttom-card {
+        @apply m-auto transition-all duration-300;
+      }
+    }
   }
 }

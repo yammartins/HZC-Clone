@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Cards from '~/components/Cards';
 import MainCards from '~/components/MainCards';
 import MiniCards from '~/components/MiniCards';
-import Menu from '~/layouts/Menu';
 import SectionName from '~/layouts/SectionName';
 
 import Ademir from '../../assets/ademir.jpeg';
@@ -67,9 +66,6 @@ const Homepage: React.FC = () => (
               modules={[Pagination]}
               spaceBetween={32}
               slidesPerView={1}
-              pagination={{
-                clickable: true,
-              }}
               breakpoints={{
                 1310: {
                   spaceBetween: 32,
@@ -126,9 +122,6 @@ const Homepage: React.FC = () => (
               modules={[Pagination]}
               spaceBetween={32}
               slidesPerView={1}
-              pagination={{
-                clickable: true,
-              }}
               breakpoints={{
                 1310: {
                   spaceBetween: 32,
