@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '~/components/Button';
+import Notification from '~/components/Notification';
 import { useAuth } from '~/contexts';
 
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
@@ -10,7 +11,6 @@ import { ReactComponent as UserIcon } from '../../assets/icons/datauser.svg';
 import { ReactComponent as EditIcon } from '../../assets/icons/edit.svg';
 import { ReactComponent as LeftIcon } from '../../assets/icons/left.svg';
 import { ReactComponent as LogoutIcon } from '../../assets/icons/logout.svg';
-import { ReactComponent as NotificationIcon } from '../../assets/icons/notifications.svg';
 import { ReactComponent as PriceIcon } from '../../assets/icons/price.svg';
 import Vasnetsov from '../../assets/vasnetsov.jpeg';
 import { SectionNameHandles } from './types';
@@ -19,7 +19,6 @@ const SectionName: React.FC<SectionNameHandles> = ({
   server,
   button,
   profile,
-  hasNotifications = false,
   buttonname,
 }) => {
   const {
@@ -36,7 +35,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
   };
 
   return (
-    <header className="section-channel">
+    <header className={`section-channel ${button ? 'py-5' : ''}`}>
       <div className="channel-text">
         {server
           ? (<h2 className="channel-text-title">{server}</h2>)
@@ -113,10 +112,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
           </div>
         </div>
         <div className="divider" />
-        <div className="notification">
-          <NotificationIcon />
-          {hasNotifications === true && (<div className="notification-span" />)}
-        </div>
+        <Notification hasNotifications sectionName />
       </div>
     </header>
   );

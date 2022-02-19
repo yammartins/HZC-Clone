@@ -8,7 +8,7 @@ const Notification: React.FC<NotificationHandles> = ({
   sectionName = false,
   ...rest
 }) => (
-  <div {...rest} className={`notification ${className || ''} ${menu && 'menu-notification'} ${sectionName && 'menu-section'}`}>
+  <div {...rest} className={`notification ${className || ''} ${menu && 'menu-notification'} ${sectionName && 'section-notification'}`}>
     <NotificationIcon />
     {hasNotifications && (<div className="notification-span" />)}
   </div>

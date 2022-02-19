@@ -5,5 +5,22 @@
     &-span {
      @apply w-2 h-2 absolute rounded-full flex-shrink bg-gr left-4 top-[1.4rem];
     }
-  }  
+
+    &.menu-notification {
+      @apply pointer-events-none opacity-0;
+    }
+  } 
+  
+  @media screen and (max-width: 630px) {
+    .notification {
+
+      &.menu-notification {
+        @apply absolute right-8 pointer-events-auto opacity-100;
+      }
+      
+      &.section-notification {
+        @apply opacity-0 pointer-events-none;
+     }
+    }
+  }
 }

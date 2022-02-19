@@ -96,7 +96,7 @@ const Menu: React.FC = () => {
         </div>
       </div>
 
-      <Notification hasNotifications />
+      <Notification hasNotifications menu />
     </aside>
   );
 };
