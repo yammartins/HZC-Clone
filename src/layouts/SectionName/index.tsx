@@ -51,8 +51,6 @@ const SectionName: React.FC<SectionNameHandles> = ({
           )}
       </div>
 
-      {/* // Corrigir o padding em telas com e sem botão */}
-
       <div className="profile">
         {button && (
           <>
@@ -62,8 +60,9 @@ const SectionName: React.FC<SectionNameHandles> = ({
               appearance="outline"
               label={buttonname}
               onClick={button}
+              className="button-section"
             />
-            <div className="h-8 w-[1px] bg-grey mx-8" />
+            <div className="button-divider" />
           </>
         )}
         <div className="profile-data">

@@ -9,6 +9,10 @@
     .profile {
       @apply flex; 
 
+      .button-divider {
+        @apply h-8 w-[1px] bg-grey mx-8;
+      }
+
       &-data {
         @apply gap-2 items-center flex;
 
@@ -84,6 +88,36 @@
       .open {
         @apply relative top-4 transition-all duration-300;
       }  
+    }
+  }
+
+  @media screen and (max-width: 906px) {
+    .profile {
+      .button-section {
+        @apply absolute right-[17rem] top-4;
+
+        .button-text {
+          @apply hidden;
+        }
+      }
+  
+      .button-divider {
+        @apply opacity-0 pointer-events-none hidden;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .section-channel {
+      @apply px-4;
+
+      .button-section {
+        @apply right-56;
+      }
+
+      .divider {
+        @apply mx-2;
+      }
     }
   }
 

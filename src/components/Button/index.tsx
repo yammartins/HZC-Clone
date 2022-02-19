@@ -55,11 +55,13 @@ const Button: React.FC<ButtonProps> = ({
       {...rest}
       disabled={disabled}
       type={submit ? 'submit' : 'button'}
-      className={styled}
+      className={`${styled} ${className || ''}`}
     >
       {icon && icons[icon]}
       {loading}
-      {label}
+      <span className="button-text">
+        {label}
+      </span>
     </button>
   );
 };

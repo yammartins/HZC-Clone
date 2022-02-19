@@ -22,4 +22,10 @@
       }
     }
   }
+
+  @media screen and (max-width: 630px) {
+    .picos {
+      @apply px-4 py-4 transition-all duration-300;
+    }
+  }
 }

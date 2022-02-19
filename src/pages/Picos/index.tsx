@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 
 import Cards from '~/components/Cards';
 import MiniCards from '~/components/MiniCards';
-import Menu from '~/layouts/Menu';
 import SectionName from '~/layouts/SectionName';
 
 import Location from '../../assets/pico.png';
@@ -21,14 +20,12 @@ import Schiller from '../../assets/schiller.jpg';
 
 const Picos: React.FC = () => (
   <div className="flex w-full">
-    <Menu />
     <main className="w-full h-full flex">
       <SectionName
         server="Picos"
         profile={Diomedes}
-        name="Ernst Junger"
         hasNotifications
-        button
+        button={() => {}}
         buttonname="Adicionar um novo pico"
       />
       <div className="picos">
