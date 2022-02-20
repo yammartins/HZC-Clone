@@ -23,6 +23,14 @@
     }
   }
 
+  @media screen and (max-width: 1080px) {
+    .picos {
+      .picos-location {
+        @apply flex flex-col transition-all duration-300;
+      }
+    }
+  }
+
   @media screen and (max-width: 630px) {
     .picos {
       @apply px-4 py-4 transition-all duration-300;

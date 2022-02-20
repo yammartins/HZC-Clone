@@ -128,6 +128,14 @@
       .profile {
         @apply relative;
         
+        .button-section {
+          @apply relative top-0 -right-[10.5rem];
+
+          .button-text {
+            @apply flex;
+          }
+        }
+
         .profile-data {
 
           &-name, .picture, .menu {

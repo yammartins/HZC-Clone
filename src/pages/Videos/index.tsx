@@ -39,7 +39,6 @@ const Videos: React.FC = () => {
         <SectionName
           server="Videos"
           button={() => onUpload(true)}
-          name="Yammartins"
           profile={Photo}
           buttonname="Adicionar novo vídeo"
         />
@@ -70,10 +69,21 @@ const Videos: React.FC = () => {
             <div className="most-seen">
               <Swiper
                 modules={[Pagination]}
-                spaceBetween={32}
-                slidesPerView={4}
-                pagination={{
-                  clickable: true,
+                spaceBetween={0}
+                slidesPerView={1}
+                breakpoints={{
+                  1310: {
+                    spaceBetween: 32,
+                    slidesPerView: 4,
+                  },
+                  1050: {
+                    spaceBetween: 24,
+                    slidesPerView: 3,
+                  },
+                  900: {
+                    spaceBetween: 16,
+                    slidesPerView: 2,
+                  },
                 }}
               >
                 <SwiperSlide>
