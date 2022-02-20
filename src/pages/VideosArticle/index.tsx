@@ -16,8 +16,8 @@ import Profile from '../../assets/vasnetsov.jpeg';
 
 const VideosArticle: React.FC = () => (
   <main className="flex flex-col w-full">
-    <SectionName profile={Profile} name="de Camões" />
-    <div className="pico-box">
+    <SectionName profile={Profile} />
+    <div className="video-box">
       <div className="body-of-article">
         <div className="article-video">
           <iframe width="832" height="534" src="https://www.youtube.com/embed/uPSgdRP3GEY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-2xl" />
@@ -89,7 +89,7 @@ const VideosArticle: React.FC = () => (
           </div>
         </div>
       </div>
-      <div className="pico-more">
+      <div className="video-more">
         <h2 className="text-h4 text-wt font-bold">Outros similares</h2>
         <div className="most-seen flex-col gap-4">
           <Cards id={1} image={Pico1} author={Samurai} name="Bruno Lopes" title="Gap do Itaú da Voluntários da Pátria" type="post" view={53} />

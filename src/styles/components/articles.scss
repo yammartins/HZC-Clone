@@ -1,5 +1,5 @@
 @layer components {
-  .pico-box {
+  .pico-box, .video-box {
     @apply flex pl-[16.375rem] pt-28 pr-[3.625rem] pb-8 gap-8 justify-between;
 
     .body-of-article {
@@ -30,7 +30,7 @@
       }
     }
 
-    .pico-more {
+    .pico-more, .video-more {
       @apply flex flex-col gap-4;
     }
   }
