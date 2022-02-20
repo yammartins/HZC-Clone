@@ -35,7 +35,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
   };
 
   return (
-    <header className={`section-channel ${button ? 'py-5' : ''}`}>
+    <header className={`section-channel ${button ? 'py-5' : ''} ${! server ? 'previous-page' : ''}`}>
       <div className="channel-text">
         {server
           ? (<h2 className="channel-text-title">{server}</h2>)

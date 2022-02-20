@@ -20,7 +20,7 @@ const VideosArticle: React.FC = () => (
     <div className="video-box">
       <div className="body-of-article">
         <div className="article-video">
-          <iframe width="832" height="534" src="https://www.youtube.com/embed/uPSgdRP3GEY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-2xl" />
+          <iframe width="100%" height="534" src="https://www.youtube.com/embed/uPSgdRP3GEY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-2xl" />
         </div>
         <div className="text-of-article">
           <h2 className="text-h2 font-semibold text-wt">
@@ -68,7 +68,7 @@ const VideosArticle: React.FC = () => (
               hendrerit duis proin excepturi, torquent et, sem, eu temporibus aut placerat
               nostrum. Parturient perspiciatis nesciunt. Earum ligula habitasse quo laoreet.
             </p>
-            <div className="flex gap-4">
+            <div className="image-text">
               <img src={Imagem1} alt="" className="w-full" />
               <img src={Imagem2} alt="" className="w-full" />
             </div>
@@ -91,7 +91,7 @@ const VideosArticle: React.FC = () => (
       </div>
       <div className="video-more">
         <h2 className="text-h4 text-wt font-bold">Outros similares</h2>
-        <div className="most-seen flex-col gap-4">
+        <div className="most-seen">
           <Cards id={1} image={Pico1} author={Samurai} name="Bruno Lopes" title="Gap do Itaú da Voluntários da Pátria" type="post" view={53} />
           <Cards id={2} image={Pico2} author={Schiller} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} />
           <Cards id={3} image={Pico3} author={Diomedes} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} />

@@ -107,16 +107,35 @@
     }
   }
 
+  //Changes for articles
+  @media screen and (max-width: 906px) {
+    .previous-page {
+      @apply px-4;
+    }
+  }
+
+  //Changes for articles
+
+  @media screen and (max-width: 715px) {
+    .previous-page {
+      .profile-data-name {
+        @apply hidden;
+      }
+  
+      .profile {
+        .divider {
+          @apply mx-3;
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: 700px) {
     .section-channel {
       @apply px-4;
 
       .button-section {
         @apply right-56;
-      }
-
-      .divider {
-        @apply mx-2;
       }
     }
   }

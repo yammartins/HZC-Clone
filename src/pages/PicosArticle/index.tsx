@@ -16,17 +16,15 @@ import Samurai from '../../assets/samurai.jpg';
 import Schiller from '../../assets/schiller.jpg';
 
 const PicosArticle: React.FC = () => (
-  <main className="flex w-full">
+  <main className="flex flex-col w-full">
     <SectionName
       profile={Diomedes}
       hasNotifications
-      button={() => {}}
-      buttonname="Adicionar um novo pico"
     />
     <div className="pico-box">
       <div className="body-of-article">
         <div className="article-image">
-          <img src={Location} alt="Imagem do artigo" />
+          <img src={Location} alt="Imagem do artigo" className="w-full" />
         </div>
         <div className="text-of-article">
           <h2 className="text-h2 font-semibold text-wt">
@@ -74,7 +72,7 @@ const PicosArticle: React.FC = () => (
               hendrerit duis proin excepturi, torquent et, sem, eu temporibus aut placerat
               nostrum. Parturient perspiciatis nesciunt. Earum ligula habitasse quo laoreet.
             </p>
-            <div className="flex gap-4">
+            <div className="image-text">
               <img src={Imagem1} alt="" className="w-full" />
               <img src={Imagem2} alt="" className="w-full" />
             </div>
