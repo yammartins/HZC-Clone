@@ -17,7 +17,6 @@ import Video3 from '../../assets/album-3.png';
 import COF from '../../assets/banner.jpg';
 import Carpeaux from '../../assets/carpeaux.jpeg';
 import Cruyff from '../../assets/cruyff.jpeg';
-import Farney from '../../assets/farney.jpeg';
 import Junger from '../../assets/junger.jpeg';
 import Left17 from '../../assets/left-1-7.png';
 import Left2 from '../../assets/left-2.png';
@@ -65,6 +64,7 @@ const Homepage: React.FC = () => {
   }, [videos?.data]);
 
   console.log(filtered.views);
+
   if (! filtered.featured || ! filtered.recents || ! filtered.views) return <h1>carregando</h1>;
 
   return (
@@ -83,10 +83,8 @@ const Homepage: React.FC = () => {
                   </a>
                 </div>
                 <div className="most-recent-list">
-                  {filtered.recents.map(({
-                    id, url, name, view,
-                  }) => (
-                    <MiniCards key={id} id={id} image={url} author="Júlia Fonseca" title="HZC - Love machine" />
+                  {filtered.recents.map(({ id, attributes }) => (
+                    <MiniCards key={id} id={id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author="Júlia Fonseca" title={attributes.name} />
                   ))}
                 </div>
               </div>
