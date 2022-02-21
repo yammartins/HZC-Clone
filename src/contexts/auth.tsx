@@ -32,6 +32,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 
       cookie.set('@hzc-token', data.jwt);
 
+      api.defaults.headers.common.Authorization = `Bearer ${data.jwt}`;
+
       sessionStorage.setItem('@hzc-user', JSON.stringify(data.user));
 
       return;
@@ -43,6 +45,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     if (cookies && storage) {
       const parse = JSON.parse(storage);
+
+      api.defaults.headers.common.Authorization = `Bearer ${cookies}`;
 
       onUser(parse);
     }
@@ -77,6 +81,8 @@ export const AuthProvider: React.FC = ({ children }) => {
     onUser(null);
 
     cookie.remove('@hzc-token');
+
+    api.defaults.headers.common.Authorization = '';
 
     sessionStorage.removeItem('@hzc-user');
   }, []);
