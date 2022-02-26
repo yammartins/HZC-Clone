@@ -63,8 +63,6 @@ const Homepage: React.FC = () => {
     });
   }, [videos?.data]);
 
-  console.log(filtered.views);
-
   if (! filtered.featured || ! filtered.recents || ! filtered.views) return <h1>carregando</h1>;
 
   return (
