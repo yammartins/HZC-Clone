@@ -2,6 +2,7 @@ import { ReactComponent as DolarIcon } from '../../assets/icons/dolar.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/time.svg';
 import { ReactComponent as ViewsIcon } from '../../assets/icons/views.svg';
 import Button from '../Button';
+import UserPhoto from '../UserPhoto';
 import { MainCardsHandles } from './types';
 
 const MainCards: React.FC<MainCardsHandles> = ({
@@ -31,9 +32,7 @@ const MainCards: React.FC<MainCardsHandles> = ({
 
         <div className="about-and-info">
           <div className="author-name">
-            <div className="author-image w-6 h-6">
-              <img src={author} alt="foto do autor" className="w-6 h-6 rounded-full flex-shrink" />
-            </div>
+            <UserPhoto maincard userimage={author} />
             <cite className="font-sans text-normal font-normal text-grey">{name}</cite>
           </div>
           <div className="data">

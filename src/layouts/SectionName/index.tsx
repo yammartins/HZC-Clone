@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '~/components/Button';
 import Notification from '~/components/Notification';
+import UserPhoto from '~/components/UserPhoto';
 import { useAuth } from '~/contexts';
 
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
@@ -12,7 +13,6 @@ import { ReactComponent as EditIcon } from '../../assets/icons/edit.svg';
 import { ReactComponent as LeftIcon } from '../../assets/icons/left.svg';
 import { ReactComponent as LogoutIcon } from '../../assets/icons/logout.svg';
 import { ReactComponent as PriceIcon } from '../../assets/icons/price.svg';
-import Vasnetsov from '../../assets/vasnetsov.jpeg';
 import { SectionNameHandles } from './types';
 
 const SectionName: React.FC<SectionNameHandles> = ({
@@ -67,7 +67,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
         )}
         <div className="profile-data">
           <div className="picture">
-            <img src={profile} alt="foto do usuário" />
+            <UserPhoto section userimage={profile} />
           </div>
           <span className="profile-data-name">{user?.username}</span>
           <div className="menu">
@@ -78,7 +78,7 @@ const SectionName: React.FC<SectionNameHandles> = ({
             <div className={`user-profile ${open ? 'is-open' : ''}`}>
               <div className="menu-header">
                 <span className="flex gap-2 text-wt text-leg p-3">
-                  <img src={Vasnetsov} alt="foto do usuário" className="rounded-full w-7 h-7 flex-shrink" />
+                  <UserPhoto section userimage={profile} />
                   {user?.email}
                 </span>
                 <CloseIcon

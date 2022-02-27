@@ -14,6 +14,7 @@ export interface Video {
   duration: number,
   featured: boolean,
   description: string,
+  type: 'VIDEO' | 'ART' ;
 }
 
 export type VideoHandles = StrapiHandles<Video>;

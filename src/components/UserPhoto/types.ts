@@ -1,5 +1,6 @@
 export interface ProfileHandles {
-  user?: boolean;
+  section?: boolean;
   card?: boolean;
   maincard?: boolean;
+  userimage: string;
 }

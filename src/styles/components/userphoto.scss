@@ -1,0 +1,21 @@
+@layer components {
+  .userphotos {
+    @apply flex;
+
+    &.section {
+      @apply w-8 h-8;
+    }
+
+    &.card {
+      @apply w-12 h-12;
+    }
+
+    &.maincard {
+      @apply w-6 h-6;
+    }
+
+    img {
+      @apply w-full h-auto object-cover rounded-full;
+    }
+  }
+}

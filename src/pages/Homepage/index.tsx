@@ -11,12 +11,10 @@ import api from '~/services';
 import { VideoHandles } from '~/types';
 
 import Ademir from '../../assets/ademir.jpeg';
-import Video1 from '../../assets/album-1.png';
 import Video2 from '../../assets/album-2.png';
 import Video3 from '../../assets/album-3.png';
-import COF from '../../assets/banner.jpg';
 import Carpeaux from '../../assets/carpeaux.jpeg';
-import Cruyff from '../../assets/cruyff.jpeg';
+import Harpya from '../../assets/harpya.jpeg';
 import Junger from '../../assets/junger.jpeg';
 import Left17 from '../../assets/left-1-7.png';
 import Left2 from '../../assets/left-2.png';
@@ -24,10 +22,8 @@ import Left36 from '../../assets/left-3-6.png';
 import Left4 from '../../assets/left-4.png';
 import Left5 from '../../assets/left-5.png';
 import Header2 from '../../assets/mainheader2.png';
-import Olavo from '../../assets/olavo.jpeg';
 import Professor from '../../assets/professor.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
-import Samurai from '../../assets/samurai.jpg';
 import SaoJanuario from '../../assets/saojanuario.jpeg';
 import Shirt2 from '../../assets/shirt-2.png';
 
@@ -45,25 +41,36 @@ const Homepage: React.FC = () => {
   }, []);
 
   const filtered = useMemo(() => {
-    // 1º Filtrar o estados de videos e retornar somente 1 video de destaque. "filter"
-    // 2° Colocar os videos em ordem decrescente tomando como referência o "publishAt"
-    // 3° Colocar os videos em ordem decrescente tomando como referência o "views"
+    if (videos && videos.data) {
+      const typeArt = videos?.data.filter(({ attributes }) => attributes.type === 'ART') || [];
 
-    const featured = videos?.data.filter((video) => video.attributes.featured)[0];
+      const typeVideo = videos?.data.filter(({ attributes }) => attributes.type === 'VIDEO') || [];
 
-    const recents = videos?.data.sort((a, b) => (a
-      .attributes.publishedAt > b.attributes.publishedAt ? 1 : -1));
+      const formatted = (arr: VideoHandles['data']) => {
+        const featured = arr.filter(({ attributes }) => attributes.featured)[0] || {};
 
-    const views = videos?.data.sort((a, b) => a.attributes.views - b.attributes.views);
+        const recents = arr.sort((a, b) => (a
+          .attributes.publishedAt > b.attributes.publishedAt ? 1 : -1));
 
-    return ({
-      views,
-      recents,
-      featured,
-    });
-  }, [videos?.data]);
+        const views = arr.sort((a, b) => b.attributes.views - a.attributes.views);
 
-  if (! filtered.featured || ! filtered.recents || ! filtered.views) return <h1>carregando</h1>;
+        return ({
+          views,
+          recents,
+          featured,
+        });
+      };
+
+      return ({
+        arts: formatted(typeArt),
+        videos: formatted(typeVideo),
+      });
+    }
+
+    return null;
+  }, [videos]);
+
+  if (! filtered || ! filtered.arts || ! filtered.videos) return <h1>carregando</h1>;
 
   return (
     <div className="flex-col sm:flex w-full">
@@ -72,7 +79,20 @@ const Homepage: React.FC = () => {
         <div className="content">
           <div className="videos">
             <div className="wrapper-featured">
-              <MainCards id={filtered.featured?.id} image={`${import.meta.env.VITE_DATABASE_URL}${filtered.featured.attributes.banner.data.attributes.url}`} author={Diomedes} name="Yam Prado Martins" title={filtered.featured?.attributes.name} views={filtered.featured?.attributes.views} duration={filtered.featured?.attributes.duration} way="#play" icon="play" button="Assistir agora" type="video" info="Vídeo em destaque" />
+              <MainCards
+                id={filtered.videos.featured?.id}
+                image={`${import.meta.env.VITE_DATABASE_URL}${filtered.videos.featured.attributes.banner.data.attributes.url}`}
+                author={Diomedes}
+                name="Yam Prado Martins"
+                title={filtered.videos.featured?.attributes.name}
+                views={filtered.videos.featured?.attributes.views}
+                duration={filtered.videos.featured?.attributes.duration}
+                way="#play"
+                icon="play"
+                button="Assistir agora"
+                type="video"
+                info="Vídeo em destaque"
+              />
               <div className="most-recent">
                 <div className="flex gap-2 items-center justify-between">
                   <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
@@ -81,7 +101,7 @@ const Homepage: React.FC = () => {
                   </a>
                 </div>
                 <div className="most-recent-list">
-                  {filtered.recents.map(({ id, attributes }) => (
+                  {filtered.videos.recents.map(({ id, attributes }) => (
                     <MiniCards key={id} id={id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author="Júlia Fonseca" title={attributes.name} />
                   ))}
                 </div>
@@ -101,7 +121,7 @@ const Homepage: React.FC = () => {
                     spaceBetween: 32,
                     slidesPerView: 4,
                   },
-                  1050: {
+                  1110: {
                     spaceBetween: 24,
                     slidesPerView: 3,
                   },
@@ -111,12 +131,9 @@ const Homepage: React.FC = () => {
                   },
                 }}
               >
-                <SwiperSlide><Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" /></SwiperSlide>
-                <SwiperSlide><Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" /></SwiperSlide>
-                <SwiperSlide><Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" /></SwiperSlide>
-                <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
-                <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
-                <SwiperSlide><Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" /></SwiperSlide>
+                {filtered.videos.views.map(({ id, attributes }) => (
+                  <SwiperSlide key={id}><Cards id={id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author={Harpya} name="Johann Cruyff" title={attributes.name} duration={attributes.duration} type="video" /></SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
@@ -157,7 +174,7 @@ const Homepage: React.FC = () => {
                     spaceBetween: 32,
                     slidesPerView: 4,
                   },
-                  1050: {
+                  1110: {
                     spaceBetween: 24,
                     slidesPerView: 3,
                   },

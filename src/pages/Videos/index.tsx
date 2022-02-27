@@ -45,7 +45,20 @@ const Videos: React.FC = () => {
         <div className="content">
           <div className="videos">
             <div className="wrapper-featured">
-              <MainCards id={1} image={Header1} author={Diomedes} name="Yam Prado Martins" title="HZC - Life is... / 2021" views={33} duration={52} way="#play" icon="play" button="Assistir agora" type="video" info="Vídeo em destaque" />
+              <MainCards
+                id={1}
+                image={Header1}
+                author={Diomedes}
+                name="Yam Prado Martins"
+                title="HZC - Life is... / 2021"
+                views={33}
+                duration={52}
+                way="#play"
+                icon="play"
+                button="Assistir agora"
+                type="video"
+                info="Vídeo em destaque"
+              />
               <div className="most-recent">
                 <div className="flex gap-2">
                   <h3 className="text-h4 font-bold font-sans text-wt">Vídeos recentes</h3>
@@ -54,11 +67,36 @@ const Videos: React.FC = () => {
                   </a>
                 </div>
                 <div className="most-recent-list">
-                  <MiniCards id={1} image={Right1} author="Júlia Fonseca" title="HZC - Love machine" />
-                  <MiniCards id={2} image={Right2} author="Júlia Fonseca" title="HZC - Vol.3" />
-                  <MiniCards id={3} image={Right3} author="O Rappa" title="HZC - Pescaria na Urca" />
-                  <MiniCards id={4} image={Farney} author="Dick Farney" title="Meus momentos" />
-                  <MiniCards id={5} image={Right5} author="Yamandu Costa" title="Histórias do violão" />
+                  <MiniCards
+                    id={1}
+                    image={Right1}
+                    author="Júlia Fonseca"
+                    title="HZC - Love machine"
+                  />
+                  <MiniCards
+                    id={2}
+                    image={Right2}
+                    author="Júlia Fonseca"
+                    title="HZC - Vol.3"
+                  />
+                  <MiniCards
+                    id={3}
+                    image={Right3}
+                    author="O Rappa"
+                    title="HZC - Pescaria na Urca"
+                  />
+                  <MiniCards
+                    id={4}
+                    image={Farney}
+                    author="Dick Farney"
+                    title="Meus momentos"
+                  />
+                  <MiniCards
+                    id={5}
+                    image={Right5}
+                    author="Yamandu Costa"
+                    title="Histórias do violão"
+                  />
                 </div>
               </div>
             </div>
@@ -88,23 +126,72 @@ const Videos: React.FC = () => {
               >
                 <SwiperSlide>
                   <Link to="/videos/article">
-                    <Cards id={1} image={Video1} author={Cruyff} name="Johann Cruyff" title="HZC - Tudo sem padrin" duration={42} type="video" />
+                    <Cards
+                      id={1}
+                      image={Video1}
+                      author={Cruyff}
+                      name="Johann Cruyff"
+                      title="HZC - Tudo sem padrin"
+                      duration={42}
+                      type="video"
+                    />
                   </Link>
                 </SwiperSlide>
+
                 <SwiperSlide>
-                  <Cards id={2} image={Video2} author={Diomedes} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="video" />
+                  <Cards
+                    id={2}
+                    image={Video2}
+                    author={Diomedes}
+                    name="Diomedes"
+                    title="Ilíada - Segunda batalha"
+                    duration={48}
+                    type="video"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <Cards id={3} image={Video3} author={Samurai} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="video" />
+                  <Cards
+                    id={3}
+                    image={Video3}
+                    author={Samurai}
+                    name="Musashi"
+                    title="Livro - caminho dos cinco anéis"
+                    duration={55}
+                    type="video"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+                  <Cards
+                    id={4}
+                    image={COF}
+                    author={Olavo}
+                    name="Olavo de Carvalho"
+                    title="Artigo - o milagre da solidão"
+                    duration={21}
+                    type="video"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+                  <Cards
+                    id={4}
+                    image={COF}
+                    author={Olavo}
+                    name="Olavo de Carvalho"
+                    title="Artigo - o milagre da solidão"
+                    duration={21}
+                    type="video"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <Cards id={4} image={COF} author={Olavo} name="Olavo de Carvalho" title="Artigo - o milagre da solidão" duration={21} type="video" />
+                  <Cards
+                    id={4}
+                    image={COF}
+                    author={Olavo}
+                    name="Olavo de Carvalho"
+                    title="Artigo - o milagre da solidão"
+                    duration={21}
+                    type="video"
+                  />
                 </SwiperSlide>
               </Swiper>
             </div>
