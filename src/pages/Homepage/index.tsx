@@ -10,21 +10,9 @@ import SectionName from '~/layouts/SectionName';
 import api from '~/services';
 import { VideoHandles } from '~/types';
 
-import Ademir from '../../assets/ademir.jpeg';
-import Video2 from '../../assets/album-2.png';
-import Video3 from '../../assets/album-3.png';
-import Carpeaux from '../../assets/carpeaux.jpeg';
 import Harpya from '../../assets/harpya.jpeg';
-import Junger from '../../assets/junger.jpeg';
-import Left17 from '../../assets/left-1-7.png';
-import Left2 from '../../assets/left-2.png';
-import Left36 from '../../assets/left-3-6.png';
-import Left4 from '../../assets/left-4.png';
-import Left5 from '../../assets/left-5.png';
 import Professor from '../../assets/professor.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
-import SaoJanuario from '../../assets/saojanuario.jpeg';
-import Shirt2 from '../../assets/shirt-2.png';
 
 const Homepage: React.FC = () => {
   const [videos, onVideos] = useState<VideoHandles | null>(null);
