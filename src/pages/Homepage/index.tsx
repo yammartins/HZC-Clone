@@ -21,7 +21,6 @@ import Left2 from '../../assets/left-2.png';
 import Left36 from '../../assets/left-3-6.png';
 import Left4 from '../../assets/left-4.png';
 import Left5 from '../../assets/left-5.png';
-import Header2 from '../../assets/mainheader2.png';
 import Professor from '../../assets/professor.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
 import SaoJanuario from '../../assets/saojanuario.jpeg';
@@ -150,16 +149,32 @@ const Homepage: React.FC = () => {
                   </a>
                 </div>
                 <div className="most-recent-list">
-                  <MiniCards id={1} image={Left17} title="Sem título 01" author="Antonio Tebyriçá" />
-                  <MiniCards id={2} image={Left2} title="Sem título 02" author="Antonio Tebyriçá" />
-                  <MiniCards id={3} image={Left36} title="Segurança" author="Raphael Gibson" />
-                  <MiniCards id={4} image={Left4} title="Malunguisse" author="Carolina Cannavarro" />
-                  <MiniCards id={5} image={Left5} title="Coroa da converse" author="Nikolas de Murtas" />
-                  <MiniCards id={6} image={Left36} title="Segurança" author="Raphael Gibson" />
-                  <MiniCards id={7} image={Left17} title="Sem título 03" author="Antonio Tebyriçá" />
+                  {filtered.arts.recents.map(({ id, attributes }) => (
+                    <MiniCards
+                      key={id}
+                      id={id}
+                      image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}
+                      title={attributes.name}
+                      author="Antonio Tebyriçá"
+                    />
+                  ))}
                 </div>
               </div>
-              <MainCards id={2} image={Header2} author={Diomedes} name="João ZMS" title="Only Zikas - Lagoa Dompa Club" views={33} duration={52} way="#play" icon="cart" button="Comprar agora" type="arts" info="Nova arte" price={33.33} />
+              <MainCards
+                id={filtered.arts.featured.id}
+                image={`${import.meta.env.VITE_DATABASE_URL}${filtered.arts.featured.attributes.banner.data.attributes.url}`}
+                author={Diomedes}
+                name="João ZMS"
+                title={filtered.arts.featured.attributes.name}
+                views={filtered.arts.featured.attributes.views}
+                duration={filtered.arts.featured.attributes.duration}
+                way="#play"
+                icon="cart"
+                button="Comprar agora"
+                type="arts"
+                info="Nova arte"
+                price={filtered.arts.featured.attributes.price}
+              />
             </div>
             <h2 className="font-bold text-h3 text-wt">
               Camisas mais recentes
@@ -184,14 +199,20 @@ const Homepage: React.FC = () => {
                   },
                 }}
               >
-                <SwiperSlide><Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} /></SwiperSlide>
-                <SwiperSlide><Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} /></SwiperSlide>
-                <SwiperSlide><Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} /></SwiperSlide>
-                <SwiperSlide><Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} /></SwiperSlide>
-                <SwiperSlide><Cards id={1} image={SaoJanuario} author={Ademir} name="Ademir de Menezes" title="Histórias de São Januário" duration={42} type="arts" price={33.33} /></SwiperSlide>
-                <SwiperSlide><Cards id={2} image={Video2} author={Junger} name="Diomedes" title="Ilíada - Segunda batalha" duration={48} type="arts" price={33.33} /></SwiperSlide>
-                <SwiperSlide><Cards id={3} image={Video3} author={Carpeaux} name="Musashi" title="Livro - caminho dos cinco anéis" duration={55} type="arts" price={33.33} /></SwiperSlide>
-                <SwiperSlide><Cards id={4} image={Shirt2} author={Professor} name="Olavo de Carvalho" title="Huflez Crew Philosophy Club" duration={21} type="arts" price={33.33} /></SwiperSlide>
+                {filtered.arts.views.map(({ id, attributes }) => (
+                  <SwiperSlide key={id}>
+                    <Cards
+                      id={id}
+                      image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}
+                      author={Professor}
+                      name="Olavo de Carvalho"
+                      title={attributes.name}
+                      duration={attributes.duration}
+                      type="arts"
+                      price={attributes.price}
+                    />
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>

@@ -11,6 +11,7 @@ export interface Video {
     data: MediaStrapiHandles,
   },
   views: number,
+  price: number,
   duration: number,
   featured: boolean,
   description: string,
