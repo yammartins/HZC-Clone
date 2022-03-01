@@ -1,7 +1,7 @@
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import 'mapbox-gl/dist/mapbox-gl.css';
 
+import mapboxgl, { Map } from 'mapbox-gl';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -9,7 +9,6 @@ import Cards from '~/components/Cards';
 import MiniCards from '~/components/MiniCards';
 import SectionName from '~/layouts/SectionName';
 
-import Location from '../../assets/pico.png';
 import Pico1 from '../../assets/pico1.png';
 import Pico2 from '../../assets/pico2.png';
 import Pico3 from '../../assets/pico3.png';
@@ -23,10 +22,33 @@ import Right5 from '../../assets/right-5.png';
 import Samurai from '../../assets/samurai.jpg';
 import Schiller from '../../assets/schiller.jpg';
 
+mapboxgl.accessToken = 'pk.eyJ1IjoieWFtbWFydGlucyIsImEiOiJjbDA3MHFqZXEyM3A1M2NucHFsOTdkeHEwIn0.UX0957VfJhOZvRl-S5Z6HQ';
+
 const Picos: React.FC = () => {
-  const Map = ReactMapboxGl({
-    accessToken:
-      'pk.eyJ1IjoiZmFicmljOCIsImEiOiJjaWc5aTV1ZzUwMDJwdzJrb2w0dXRmc2d0In0.p6GGlfyV-WksaDV_KdN27A',
+  const mapContainer = useRef<HTMLDivElement | null>(null);
+  const map = useRef<Map | null>(null);
+
+  const [lng, setLng] = useState(-43.175);
+  const [lat, setLat] = useState(-22.897);
+  const [zoom, setZoom] = useState(16.18);
+
+  useEffect(() => {
+    if (! map.current) return; // wait for map to initialize
+    map.current.on('move', () => {
+      setLng(Number(map.current?.getCenter().lng.toFixed(4)));
+      setLat(Number(map.current?.getCenter().lat.toFixed(4)));
+      setZoom(Number(map.current?.getZoom().toFixed(2)));
+    });
+  });
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current as HTMLDivElement,
+      style: 'mapbox://styles/yammartins/cl070rofp000h14mzk6s82zkt',
+      center: [lng, lat],
+      zoom,
+    });
   });
 
   return (
@@ -40,19 +62,7 @@ const Picos: React.FC = () => {
       />
       <div className="picos">
         <div className="picos-location">
-          <div className="map-of-points">
-            <Map
-              style="mapbox://styles/mapbox/streets-v9"
-              containerStyle={{
-                height: '100vh',
-                width: '100vw',
-              }}
-            >
-              <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-                <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-              </Layer>
-            </Map>
-          </div>
+          <div ref={mapContainer} className="map-of-points" />
           <div className="favorite">
             <div className="header">
               <h3 className="text-h4 font-bold font-sans text-wt">

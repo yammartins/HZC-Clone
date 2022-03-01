@@ -1,0 +1,11 @@
+@layer components {
+  .map-of-points {
+    .mapboxgl-canvas {
+      @apply rounded-lg;
+    }
+
+    .mapboxgl-ctrl-attrib-inner {
+      @apply hidden;
+    }
+  }
+}
