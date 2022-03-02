@@ -108,7 +108,9 @@ const VideosArticle: React.FC = () => {
           <h2 className="text-h4 text-wt font-bold">Outros similares</h2>
           <div className="most-seen">
             {filtered.map(({ id: videos_id, attributes }) => (
-              <Cards key={videos_id} id={videos_id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author={Samurai} name="Bruno Lopes" title={attributes.name} type="post" view={attributes.views} />
+              <Link to={`/videos/${videos_id}`} key={videos_id}>
+                <Cards id={videos_id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author={Samurai} name="Bruno Lopes" title={attributes.name} type="post" view={attributes.views} />
+              </Link>
             ))}
           </div>
         </div>
