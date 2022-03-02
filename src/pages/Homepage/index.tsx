@@ -8,20 +8,20 @@ import MainCards from '~/components/MainCards';
 import MiniCards from '~/components/MiniCards';
 import SectionName from '~/layouts/SectionName';
 import api from '~/services';
-import { VideoHandles } from '~/types';
+import { VideosHandles } from '~/types';
 
 import Harpya from '../../assets/harpya.jpeg';
 import Professor from '../../assets/professor.jpeg';
 import Diomedes from '../../assets/profile.jpeg';
 
 const Homepage: React.FC = () => {
-  const [videos, onVideos] = useState<VideoHandles | null>(null);
+  const [videos, onVideos] = useState<VideosHandles | null>(null);
 
   useEffect(() => {
     const fetch = async () => {
       const { data } = await api.get('/videos?populate=*');
 
-      onVideos(data as VideoHandles);
+      onVideos(data as VideosHandles);
     };
 
     fetch();
@@ -33,7 +33,7 @@ const Homepage: React.FC = () => {
 
       const typeVideo = videos?.data.filter(({ attributes }) => attributes.type === 'VIDEO') || [];
 
-      const formatted = (arr: VideoHandles['data']) => {
+      const formatted = (arr: VideosHandles['data']) => {
         const featured = arr.filter(({ attributes }) => attributes.featured)[0] || {};
 
         const recents = arr.sort((a, b) => (a

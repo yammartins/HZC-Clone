@@ -12,7 +12,7 @@ import SectionName from '~/layouts/SectionName';
 import UploadVideo from '~/layouts/UploadVideo';
 import VideoPublished from '~/layouts/VideoPublished';
 import api from '~/services';
-import { VideoHandles } from '~/types';
+import { VideosHandles } from '~/types';
 
 import Harpya from '../../assets/harpya.jpeg';
 import Photo from '../../assets/pp.jpg';
@@ -22,13 +22,13 @@ const Videos: React.FC = () => {
   const [upload, onUpload] = useState(false);
   const [open, onOpen] = useState(false);
   const [published, onPublished] = useState(false);
-  const [videos, onVideos] = useState<VideoHandles | null>(null);
+  const [videos, onVideos] = useState<VideosHandles | null>(null);
 
   useEffect(() => {
     const fetch = async () => {
       const { data } = await api.get('/videos?populate=*');
 
-      onVideos(data as VideoHandles);
+      onVideos(data as VideosHandles);
     };
 
     fetch();
@@ -38,7 +38,7 @@ const Videos: React.FC = () => {
     if (videos && videos.data) {
       const typeVideo = videos?.data.filter(({ attributes }) => attributes.type === 'VIDEO') || [];
 
-      const formatted = (arr: VideoHandles['data']) => {
+      const formatted = (arr: VideosHandles['data']) => {
         const featured = arr.filter(({ attributes }) => attributes.featured)[0] || {};
 
         const recents = arr.sort((a, b) => (a

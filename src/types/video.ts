@@ -1,4 +1,4 @@
-import { StrapiHandles, MediaStrapiHandles } from './strapi';
+import { StrapiHandles, MultiStrapiHandles, MediaStrapiHandles } from './strapi';
 
 export interface Video {
   name: string,
@@ -19,3 +19,4 @@ export interface Video {
 }
 
 export type VideoHandles = StrapiHandles<Video>;
+export type VideosHandles = MultiStrapiHandles<Video>;

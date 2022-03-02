@@ -23,6 +23,14 @@ export type MediaStrapiHandles = {
 };
 
 export interface StrapiHandles<T> {
+  data: DataHandles<T>,
+
+  meta: {
+    pagination: PaginationHandles,
+  }
+}
+
+export interface MultiStrapiHandles<T> {
   data: DataHandles<T>[],
 
   meta: {
