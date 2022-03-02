@@ -129,7 +129,7 @@ const Videos: React.FC = () => {
               >
                 {filtered.videos.views.map(({ id, attributes }) => (
                   <SwiperSlide key={id}>
-                    <Link to="/videos/article">
+                    <Link to={`/videos/${id}`}>
                       <Cards
                         id={id}
                         image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}

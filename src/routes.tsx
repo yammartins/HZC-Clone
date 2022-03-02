@@ -49,7 +49,7 @@ const Router: React.FC = () => {
 
               <Route path="videos" element={<Videos />} />
 
-              <Route path="videos/article" element={<VideosArticle />} />
+              <Route path="videos/:id" element={<VideosArticle />} />
 
             </Route>
           )}
