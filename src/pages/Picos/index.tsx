@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl, { Map } from 'mapbox-gl';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,12 +29,13 @@ const Picos: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<Map | null>(null);
 
-  const [lng, setLng] = useState(-43.175);
+  const [lng, setLng] = useState(-43.177);
   const [lat, setLat] = useState(-22.897);
-  const [zoom, setZoom] = useState(16.18);
+  const [zoom, setZoom] = useState(16.28);
 
   useEffect(() => {
     if (! map.current) return; // wait for map to initialize
+
     map.current.on('move', () => {
       setLng(Number(map.current?.getCenter().lng.toFixed(4)));
       setLat(Number(map.current?.getCenter().lat.toFixed(4)));
@@ -51,6 +53,70 @@ const Picos: React.FC = () => {
     });
   });
 
+  useEffect(() => {
+    map.current?.on('load', () => {
+      /* Add the data to your map as a layer */
+      map.current?.loadImage(
+        'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
+        (error, image) => {
+          if (error) throw error;
+          map.current?.addImage('custom-marker', image as HTMLImageElement);
+          // Add a GeoJSON source with 2 points
+          map.current?.addSource('points', {
+            type: 'geojson',
+            data: {
+              type: 'FeatureCollection',
+              features: [
+                {
+                  // feature for Mapbox DC
+                  type: 'Feature',
+                  geometry: {
+                    type: 'Point',
+                    coordinates: [
+                      -42.177, -21.897,
+                    ],
+                  },
+                  properties: {
+                    title: 'Mapbox DC',
+                  },
+                },
+                {
+                  // feature for Mapbox SF
+                  type: 'Feature',
+                  geometry: {
+                    type: 'Point',
+                    coordinates: [-122.414, 37.776],
+                  },
+                  properties: {
+                    title: 'Mapbox SF',
+                  },
+                },
+              ],
+            },
+          });
+
+          // Add a symbol layer
+          map.current?.addLayer({
+            id: 'points',
+            type: 'symbol',
+            source: 'points',
+            layout: {
+              'icon-image': 'custom-marker',
+              // get the title name from the source's "title" property
+              'text-field': ['get', 'title'],
+              'text-font': [
+                'Open Sans Semibold',
+                'Arial Unicode MS Bold',
+              ],
+              'text-offset': [0, 1.25],
+              'text-anchor': 'top',
+            },
+          });
+        },
+      );
+    });
+  });
+
   return (
     <main className="w-full h-full flex flex-col">
       <SectionName
@@ -63,6 +129,7 @@ const Picos: React.FC = () => {
       <div className="picos">
         <div className="picos-location">
           <div ref={mapContainer} className="map-of-points" />
+
           <div className="favorite">
             <div className="header">
               <h3 className="text-h4 font-bold font-sans text-wt">
