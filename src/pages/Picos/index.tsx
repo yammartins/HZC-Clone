@@ -1,4 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import {
+  useState, useRef, useEffect, useMemo,
+} from 'react';
 import { Link } from 'react-router-dom';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -9,21 +11,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Cards from '~/components/Cards';
 import MiniCards from '~/components/MiniCards';
 import SectionName from '~/layouts/SectionName';
+import api from '~/services';
+import { PicosHandles } from '~/types/picos';
 
-import Pico1 from '../../assets/pico1.png';
-import Pico2 from '../../assets/pico2.png';
-import Pico3 from '../../assets/pico3.png';
-import Pico4 from '../../assets/pico4.png';
 import Diomedes from '../../assets/profile.jpeg';
-import Right1 from '../../assets/right-1.png';
-import Right2 from '../../assets/right-2.png';
-import Right3 from '../../assets/right-3.png';
-import Right4 from '../../assets/right-4.png';
-import Right5 from '../../assets/right-5.png';
 import Samurai from '../../assets/samurai.jpg';
-import Schiller from '../../assets/schiller.jpg';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoieWFtbWFydGlucyIsImEiOiJjbDA3MHFqZXEyM3A1M2NucHFsOTdkeHEwIn0.UX0957VfJhOZvRl-S5Z6HQ';
+
+const promise = async () => {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 100);
+  });
+};
 
 const Picos: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
@@ -32,6 +32,33 @@ const Picos: React.FC = () => {
   const [lng, setLng] = useState(-43.177);
   const [lat, setLat] = useState(-22.897);
   const [zoom, setZoom] = useState(16.28);
+  const [picos, onPicos] = useState<PicosHandles | null>(null);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await api.get('/picos?populate=*');
+
+      onPicos(data as PicosHandles);
+    };
+
+    fetch();
+  }, []);
+
+  const filtered = useMemo(() => {
+    if (picos && picos.data) {
+      const views = picos.data.sort((a, b) => b.attributes.views - a.attributes.views);
+
+      const recent = picos.data.sort((a, b) => (a.attributes.publishedAt
+         > b.attributes.publishedAt ? 1 : -1));
+
+      return ({
+        views,
+        recent,
+      });
+    }
+
+    return (null);
+  }, [picos]);
 
   useEffect(() => {
     if (! map.current) return; // wait for map to initialize
@@ -41,20 +68,29 @@ const Picos: React.FC = () => {
       setLat(Number(map.current?.getCenter().lat.toFixed(4)));
       setZoom(Number(map.current?.getZoom().toFixed(2)));
     });
-  });
+  }, []);
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current as HTMLDivElement,
-      style: 'mapbox://styles/yammartins/cl070rofp000h14mzk6s82zkt',
-      center: [lng, lat],
-      zoom,
-    });
-  });
+    const load = async () => {
+      if (map.current) return; // initialize map only once
+
+      await promise();
+
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current as HTMLDivElement,
+        style: 'mapbox://styles/yammartins/cl070rofp000h14mzk6s82zkt',
+        center: [lng, lat],
+        zoom,
+      });
+    };
+
+    load();
+  }, [lat, lng, zoom, mapContainer]);
 
   useEffect(() => {
-    map.current?.on('load', () => {
+    if (! map.current) return; // wait for map to initialize
+
+    map.current.on('load', () => {
       /* Add the data to your map as a layer */
       map.current?.loadImage(
         'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
@@ -115,7 +151,11 @@ const Picos: React.FC = () => {
         },
       );
     });
-  });
+  }, []);
+
+  console.log(filtered?.recent);
+
+  if (! picos) return <h1>Carregando</h1>;
 
   return (
     <main className="w-full h-full flex flex-col">
@@ -138,12 +178,15 @@ const Picos: React.FC = () => {
               <a href="#more" className="text-smbut text-blma font-semibold">Ver todos</a>
             </div>
             <div className="most-recent-list">
-              <MiniCards id={1} image={Right1} author="Júlia Fonseca" title="Wallride da FGP" />
-              <MiniCards id={2} image={Right2} author="Júlia Fonseca" title="Borda de valores" />
-              <MiniCards id={3} image={Right3} author="Júlia Fonseca" title="Wallride do Rebouças" />
-              <MiniCards id={4} image={Right4} author="Júlia Fonseca" title="Segundo setor da Praça Mauá" />
-              <MiniCards id={5} image={Right5} author="Júlia Fonseca" title="Borda de valores" />
-              <MiniCards id={6} image={Right1} author="Júlia Fonseca" title="Wallride do Rebouças" />
+              {filtered?.recent.map(({ id, attributes }) => (
+                <MiniCards
+                  key={id}
+                  id={id}
+                  image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}
+                  author="Júlia Fonseca"
+                  title={attributes.title}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -168,14 +211,21 @@ const Picos: React.FC = () => {
               },
             }}
           >
-            <SwiperSlide>
-              <Link to="/picos/article">
-                <Cards id={1} image={Pico1} author={Samurai} name="Bruno Lopes" title="Gap do Itaú da Voluntários da Pátria" type="post" view={53} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide><Cards id={2} image={Pico2} author={Schiller} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} /></SwiperSlide>
-            <SwiperSlide><Cards id={3} image={Pico3} author={Diomedes} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} /></SwiperSlide>
-            <SwiperSlide><Cards id={4} image={Pico4} author={Diomedes} name="Olavo de Carvalho" title="O abandono dos ideiais" type="post" view={53} /></SwiperSlide>
+            {filtered?.views.map(({ id, attributes }) => (
+              <SwiperSlide key={id}>
+                <Link to={`/picos/${id}`}>
+                  <Cards
+                    id={id}
+                    image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}
+                    author={Samurai}
+                    name="Bruno Lopes"
+                    title={attributes.title}
+                    type="post"
+                    view={53}
+                  />
+                </Link>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
