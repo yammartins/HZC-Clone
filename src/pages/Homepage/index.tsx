@@ -89,7 +89,13 @@ const Homepage: React.FC = () => {
                 </div>
                 <div className="most-recent-list">
                   {filtered.videos.recents.map(({ id, attributes }) => (
-                    <MiniCards key={id} id={id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author="Júlia Fonseca" title={attributes.name} />
+                    <MiniCards
+                      key={id}
+                      id={id}
+                      image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}
+                      author="Júlia Fonseca"
+                      title={attributes.name}
+                    />
                   ))}
                 </div>
               </div>
@@ -119,7 +125,18 @@ const Homepage: React.FC = () => {
                 }}
               >
                 {filtered.videos.views.map(({ id, attributes }) => (
-                  <SwiperSlide key={id}><Cards id={id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author={Harpya} name="Johann Cruyff" title={attributes.name} duration={attributes.duration} type="video" /></SwiperSlide>
+                  <SwiperSlide key={id}>
+                    <Cards
+                      id={id}
+                      image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}
+                      author={Harpya}
+                      name="Johann Cruyff"
+                      title={attributes.name}
+                      duration={attributes.duration}
+                      views={attributes.views}
+                      type="video"
+                    />
+                  </SwiperSlide>
                 ))}
               </Swiper>
             </div>
@@ -195,7 +212,6 @@ const Homepage: React.FC = () => {
                       author={Professor}
                       name="Olavo de Carvalho"
                       title={attributes.name}
-                      duration={attributes.duration}
                       type="arts"
                       price={attributes.price}
                     />

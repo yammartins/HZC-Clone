@@ -15,7 +15,7 @@ const Cards: React.FC<CardsHandles> = ({
   duration,
   type,
   price,
-  view,
+  views,
 }) => (
   <div key={id} className={`box-${type}`}>
     <div className="box-banner h-40 w-[16rem]">
@@ -31,13 +31,13 @@ const Cards: React.FC<CardsHandles> = ({
       <h2 className="text-h4 font-bold text-wt w-[12.625rem] truncate">{title}</h2>
       <span className="flex items-center gap-2 text-grey font-sans font-normal text-leg mt-6">
         {duration && (<TimeIcon />)}
-        {duration && (`${view} minutos`)}
+        {duration && (`${duration} min`)}
         {price && (<DolarIcon />)}
         {price && (`${price}`)}
-        {view as number >= 1 && (<ViewIcon />)}
-        {view as number >= 1 && (`${view} visualizações`)}
-        {view === 0 && (<ViewIcon />)}
-        {view === 0 && ('0 visualizações')}
+        {views as number >= 1 && (<ViewIcon />)}
+        {views as number >= 1 && (`${views} visualizações`)}
+        {views === 0 && (<ViewIcon />)}
+        {views === 0 && ('0 visualizações')}
       </span>
     </div>
   </div>

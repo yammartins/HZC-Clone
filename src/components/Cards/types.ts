@@ -5,7 +5,7 @@ export interface CardsHandles {
   name: string;
   title: string;
   duration?: number;
-  view?: number
+  views?: number
   type: string;
   price?: number | string;
 }

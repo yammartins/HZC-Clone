@@ -109,7 +109,15 @@ const VideosArticle: React.FC = () => {
           <div className="most-seen">
             {filtered.map(({ id: videos_id, attributes }) => (
               <Link to={`/videos/${videos_id}`} key={videos_id}>
-                <Cards id={videos_id} image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`} author={Samurai} name="Bruno Lopes" title={attributes.name} type="post" view={attributes.views} />
+                <Cards
+                  id={videos_id}
+                  image={`${import.meta.env.VITE_DATABASE_URL}${attributes.banner.data.attributes.url}`}
+                  author={Samurai}
+                  name="Bruno Lopes"
+                  title={attributes.name}
+                  type="post"
+                  views={attributes.views}
+                />
               </Link>
             ))}
           </div>
