@@ -61,6 +61,8 @@ const Videos: React.FC = () => {
     return null;
   }, [videos]);
 
+  console.log(filtered);
+
   if (! filtered || ! filtered.videos) return <h1>carregando</h1>;
 
   return (
@@ -136,7 +138,7 @@ const Videos: React.FC = () => {
                         author={Harpya}
                         name="Johann Cruyff"
                         title={attributes.name}
-                        duration={attributes.duration}
+                        view={attributes.views}
                         type="video"
                       />
                     </Link>

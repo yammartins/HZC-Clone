@@ -44,9 +44,11 @@ const Picos: React.FC = () => {
     fetch();
   }, []);
 
+  console.log(picos);
+
   const filtered = useMemo(() => {
     if (picos && picos.data) {
-      const views = picos.data.sort((a, b) => b.attributes.views - a.attributes.views);
+      const views = picos.data.sort((a, b) => a.attributes.views - b.attributes.views);
 
       const recent = picos.data.sort((a, b) => (a.attributes.publishedAt
          > b.attributes.publishedAt ? 1 : -1));
@@ -153,8 +155,6 @@ const Picos: React.FC = () => {
     });
   }, []);
 
-  console.log(filtered?.recent);
-
   if (! picos) return <h1>Carregando</h1>;
 
   return (
@@ -221,7 +221,7 @@ const Picos: React.FC = () => {
                     name="Bruno Lopes"
                     title={attributes.title}
                     type="post"
-                    view={53}
+                    view={attributes.views}
                   />
                 </Link>
               </SwiperSlide>

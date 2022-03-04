@@ -30,12 +30,14 @@ const Cards: React.FC<CardsHandles> = ({
       </div>
       <h2 className="text-h4 font-bold text-wt w-[12.625rem] truncate">{title}</h2>
       <span className="flex items-center gap-2 text-grey font-sans font-normal text-leg mt-6">
-        {type === 'video' && (<TimeIcon />)}
-        {type === 'video' && (`${duration} minutos`)}
-        {type === 'arts' && (<DolarIcon />)}
-        {type === 'arts' && (`${price}`)}
-        {type === 'post' && (<ViewIcon />)}
-        {type === 'post' && (`${view} visualizações`)}
+        {duration && (<TimeIcon />)}
+        {duration && (`${view} minutos`)}
+        {price && (<DolarIcon />)}
+        {price && (`${price}`)}
+        {view as number >= 1 && (<ViewIcon />)}
+        {view as number >= 1 && (`${view} visualizações`)}
+        {view === 0 && (<ViewIcon />)}
+        {view === 0 && ('0 visualizações')}
       </span>
     </div>
   </div>

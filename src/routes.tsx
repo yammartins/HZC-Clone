@@ -45,7 +45,7 @@ const Router: React.FC = () => {
 
               <Route path="picos" element={<Picos />} />
 
-              <Route path="picos/article" element={<PicosArticle />} />
+              <Route path="picos/:id" element={<PicosArticle />} />
 
               <Route path="videos" element={<Videos />} />
 
